@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Persona 4: Normal Fusion (beta)</title>
+<title>Persona 3 FES: Tringle Fusion (beta)</title>
 <meta http-equiv="Content-Type" content="text/html;charset=ascii">
 <script src="angular-0.9.19.min.js" ng:autobind></script>
-<script src="data4.js"></script>
-<script src="app2.js"></script>
+<script src="data3fes.js"></script>
+<script src="app3.js"></script>
 <style>
 td { padding: 0 0.25em; }
 </style>
 </head>
 <body>
-<h2>Persona 4: Normal Fusion (beta)</h2>
+<h2>Persona 3 FES: Triangle Fusion (beta)</h2>
 <ul>
   <li><a href='index.html'>Main Menu</a></li>
-  <li><a href='4t.html'>Triangle Fusion</a></li>
-  <li><a href='4.html'>Recipe Generator</a></li>
+  <li><a href='3fn.html'>Normal Fusion</a></li>
+  <li><a href='3fes.html'>Recipe Generator</a></li>
 </ul>
 <div ng:controller="Ctrl1">
 <table>
   <tr>
     <td colspan="2" align="center">Persona 1</td>
     <td colspan="2" align="center">Persona 2</td>
+    <td colspan="2" align="center">Persona 3</td>
   </tr>
   <tr>
     <td><strong>Name: </strong></td>
@@ -31,6 +32,10 @@ td { padding: 0 0.25em; }
     <td><strong>Name: </strong></td>
     <td>
       <select name="p2.name" ng:init="p2.name = personae_names[0]" ng:options="ii for ii in personae_names"></select>
+    </td>
+    <td><strong>Name: </strong></td>
+    <td>
+      <select name="p3.name" ng:init="p3.name = personae_names[0]" ng:options="ii for ii in personae_names"></select>
     </td>
   </tr>
   <tr>
@@ -46,24 +51,36 @@ td { padding: 0 0.25em; }
     <td>
       {{ p2.arcana = personaeByName[p2.name].arcana }}
     </td>
+    <td>
+      <strong>Arcana:</strong>
+    </td>
+    <td>
+      {{ p3.arcana = personaeByName[p3.name].arcana }}
+    </td>
   </tr>
   <tr>
     <td>
       <strong>Level: </strong>
     </td>
     <td>
-      {{ p1.level = personaeByName[p1.name].level }}
+      <select name="p1.level" ng:options="ii for ii in range99(personaeByName[p1.name].level)"></select>
     </td>
     <td>
       <strong>Level: </strong>
     </td>
     <td>
-      {{ p2.level = personaeByName[p2.name].level }}
+      <select name="p2.level" ng:options="ii for ii in range99(personaeByName[p2.name].level)"></select>
+    </td>
+    <td>
+      <strong>Level: </strong>
+    </td>
+    <td>
+      <select name="p3.level" ng:options="ii for ii in range99(personaeByName[p3.name].level)"></select>
     </td>
   </tr>
   <tr>
-    <td align="center" colspan="4">
-<button ng:click="Fuse2()">Fuse!</button>
+    <td align="center" colspan="6">
+<button ng:click="Fuse3()">Fuse!</button>
     </td>
   </tr>
 </table>
