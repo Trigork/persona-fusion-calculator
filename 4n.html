@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Persona 4: Normal Fusion (beta)</title>
+<meta http-equiv="Content-Type" content="text/html;charset=ascii">
+<script src="angular-0.9.19.min.js" ng:autobind></script>
+<script src="data4.js"></script>
+<script src="app2.js"></script>
+<style>
+td { padding: 0 0.25em; }
+</style>
+</head>
+<body>
+<h2>Persona 4: Normal Fusion (beta)</h2>
+<div ng:controller="Ctrl1">
+<table>
+  <tr>
+    <td colspan="2" align="center">Persona 1</td>
+    <td colspan="2" align="center">Persona 2</td>
+  </tr>
+  <tr>
+    <td><strong>Name: </strong></td>
+    <td>
+      <select name="p1.name" ng:init="p1.name = personae_names[0]" ng:options="ii for ii in personae_names"></select>
+    </td>
+    <td><strong>Name: </strong></td>
+    <td>
+      <select name="p2.name" ng:init="p2.name = personae_names[0]" ng:options="ii for ii in personae_names"></select>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <strong>Arcana:</strong>
+    </td>
+    <td>
+      {{ p1.arcana = personaeByName[p1.name].arcana }}
+    </td>
+    <td>
+      <strong>Arcana:</strong>
+    </td>
+    <td>
+      {{ p2.arcana = personaeByName[p2.name].arcana }}
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <strong>Level: </strong>
+    </td>
+    <td>
+      {{ p1.level = personaeByName[p1.name].level }}
+    </td>
+    <td>
+      <strong>Level: </strong>
+    </td>
+    <td>
+      {{ p2.level = personaeByName[p2.name].level }}
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="4">
+<button ng:click="Fuse2()">Fuse!</button>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td colspan="2" align="center">
+      Result
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <strong>Persona:</strong>
+    </td>
+    <td>
+      {{lalala.name}}
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <strong>Arcana:</strong>
+    </td>
+    <td>
+      {{lalala.arcana}}
+    </td>
+  </tr>
+    <td>
+      <strong>Level:</strong>
+    </td>
+    <td>
+      {{lalala.level}}
+    </td>
+  <tr>
+  </tr>
+</table>
+</div>
+</body>
+</html>
