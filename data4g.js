@@ -190,16 +190,6 @@ const personae = [
     {'arcana': 'Judgement',   'level': 90, 'name': 'Ardha',             'max': true, 'special': true },
     {'arcana': 'Judgement',   'level': 93, 'name': 'Lucifer',           'max': true, 'special': true },
 
-    {'arcana': 'Aeon',        'level': 18, 'name': 'Ame no Uzume',      },
-    {'arcana': 'Aeon',        'level': 24, 'name': 'Narcissus',         },
-    {'arcana': 'Aeon',        'level': 31, 'name': 'Sati',              },
-    {'arcana': 'Aeon',        'level': 37, 'name': 'Raja Naga',         },
-    {'arcana': 'Aeon',        'level': 44, 'name': 'Kushinada-Hime',    },
-    {'arcana': 'Aeon',        'level': 51, 'name': 'Quetzalcoatl',      },
-    {'arcana': 'Aeon',        'level': 58, 'name': 'Kingu',             },
-    {'arcana': 'Aeon',        'level': 65, 'name': 'Lakshmi',           },
-    {'arcana': 'Aeon',        'level': 74, 'name': 'Kaguya Hime',       'max': true, },
-
     {'arcana': 'Jester',      'level': 20, 'name': 'Gurr',              },
     {'arcana': 'Jester',      'level': 27, 'name': 'Take-Minakata',     },
     {'arcana': 'Jester',      'level': 34, 'name': 'Pale Rider',        },
@@ -209,6 +199,16 @@ const personae = [
     {'arcana': 'Jester',      'level': 62, 'name': 'Chernobog',         },
     {'arcana': 'Jester',      'level': 68, 'name': 'Seiten Taisei',     },
     {'arcana': 'Jester',      'level': 77, 'name': 'Magatsu-Izanagi',   'max': true, },
+
+    {'arcana': 'Aeon',        'level': 18, 'name': 'Ame no Uzume',      },
+    {'arcana': 'Aeon',        'level': 24, 'name': 'Narcissus',         },
+    {'arcana': 'Aeon',        'level': 31, 'name': 'Sati',              },
+    {'arcana': 'Aeon',        'level': 37, 'name': 'Raja Naga',         },
+    {'arcana': 'Aeon',        'level': 44, 'name': 'Kushinada-Hime',    },
+    {'arcana': 'Aeon',        'level': 51, 'name': 'Quetzalcoatl',      },
+    {'arcana': 'Aeon',        'level': 58, 'name': 'Kingu',             },
+    {'arcana': 'Aeon',        'level': 65, 'name': 'Lakshmi',           },
+    {'arcana': 'Aeon',        'level': 74, 'name': 'Kaguya Hime',       'max': true, },
 
     {'arcana': 'World',       'level': 91, 'name': 'Izanagi-no-Okami',  'max': true, 'special': true },
     ];
