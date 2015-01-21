@@ -79,7 +79,8 @@ td { padding: 0 0.25em; }
       <strong>Persona:</strong>
     </td>
     <td>
-      {{lalala.name}}
+      <div ng:show="lalala.level>0"><a href="3fes.html#/persona/{{lalala.name}}">{{lalala.name}}</a></div>
+      <div ng:hide="lalala.level>0">{{lalala.name}}</div>
     </td>
   </tr>
   <tr>
