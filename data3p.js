@@ -39,7 +39,7 @@ const personae = [
     {'name': 'Oberon',          'level': 15, 'arcana': 'Emperor'},
     {'name': 'Take-mikazuchi',  'level': 24, 'arcana': 'Emperor'},
     {'name': 'King Frost',      'level': 30, 'arcana': 'Emperor', 'item': true},
-    {'name': 'Raja Naga',       'level': 36, 'arcana': 'Emperor'},
+    {'name': 'Naga Raja',       'level': 36, 'arcana': 'Emperor'},
     {'name': 'Kingu',           'level': 46, 'arcana': 'Emperor'},
     {'name': 'Barong',          'level': 52, 'arcana': 'Emperor'},
     {'name': 'Odin',            'level': 57, 'arcana': 'Emperor', 'max': true},
