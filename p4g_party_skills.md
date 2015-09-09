@@ -15,7 +15,7 @@ Default:
 - Sukukaja (Lv. 5)
 - Makajam (Lv. 10)
 - Magaru (Lv. 18)
-- Tentrafoo (Lv. 23)
+- Tentarafoo (Lv. 23)
 - Garula (Lv. 29)
 - Power Slash (Lv. 34)
 - Magarula (Lv. 40)
@@ -275,7 +275,7 @@ S\. Link:
 - **Full Analysis** (Rank 3): [Replaces Analysis] Along with the affinities you've attacked in the past, you can learn what skills the enemy possesses as well. 
 - **Third Eye** (Rank 4): When selecting a target, you can check to see whether the attack will be effective or not.
 - **Healing Wave** (Rank 5): All party members will recover a small amount of HP (5%) at the end of battle.
-- "Weakness Scan" (Rank 6) &gt; She will now precisely identify an enemy's weakness! [When your options for attack include the enemy's weakness, Rise will inform you.]
+- "Weakness Scan ver.2" (Rank 6) &gt; She will now precisely identify an enemy's weakness! [When your options for attack include the enemy's weakness, Rise will inform you.]
 - (Rank 7) &gt; She will periodically aid you during battle! [Rise will periodically aid you in battle in various ways.]
 - **Stamina Song** (Rank 8): [Replaces Healing Wave] The HP recovery effect at the end of the battle has become stronger (10%).
 - "Rise blocked all attacks!" (Rank 9) &gt; She can now protect the party at times! [If an ally would fall to an attack that hits the entire party, Rise will block it once.]
