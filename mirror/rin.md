@@ -480,7 +480,7 @@ Emiya pulled it off by virtue of appearing out of the fog riding without hands �
 
 Teddie didn't pull any punches either. The bear got to the scene on his roller skates and cheering a gleeful "Woohoo~!" as he grabbed onto an improvised tow-rope with his left paw while the other end of the line was being pulled by the jaws of a striped tiger running in front of him at full gallop. Just for the record, the large feline was naturally on fire.
 
-The leader of the Investigation Team commanded his Sun Arcana Persona to give the rope a tug to the left — probable to make it easier for Teddie to brake — before dismissing Gdon entirely. Teddie skidded into halt like a hockey player, with surprising grace given his top-heavy form.
+The leader of the Investigation Team commanded his Sun Arcana Persona to give the rope a tug to the left — probably to make it easier for Teddie to brake — before dismissing Gdon entirely. The bear skidded into halt like a hockey player, with surprising grace given his top-heavy form.
 
 For his part, Emiya himself couldn't easily stop his bike without placing his otherwise-occupied hands on the handlebar, so he simply unmounted out of it with a jump, but not before making a Persona card appear in the way of his leap.
 
@@ -504,7 +504,7 @@ Emiya blinked. A moment later that seemed longer than it really was, he let out 
 
 The magus frowned, mostly to himself, and asked "What happened?"
 
-"Long story short, we run into someone strong. We fought, we won," Yosuke summed up.
+"Long story short, we ran into someone strong. We fought, we won," Yosuke summed up.
 
 "Then why did Amagi-san use the emergency signal?"
 
@@ -520,7 +520,7 @@ Looking at little embarrassed, the magus made a face and pointed at his own head
 
 "Ugh, what is she saying?" he asked cautiously.
 
-"Hua Po is a tree spirit. She can't really talk, but she communicates through birdsongs," the Wild Card explained. "She's now singing a soulful melody. Sad. Regretful, but not _too_ regretful. I'm sorry, I don't know I can really explain it…"
+"Hua Po is a tree spirit. She can't really talk, but she communicates through birdsongs," the Wild Card explained. "She's now singing a soulful melody. Sad. Regretful, but not _too_ regretful. I'm sorry, I don't know if I can really explain it…"
 
 "Yeah…" Yosuke sighed. Bracing himself, he added, "Well, noticed when I said before we fought some*one* strong, I didn't say some*thing* strong?"
 
@@ -532,7 +532,7 @@ As the silence stretched, Kanji decided that he had waited enough. "One of 'em m
 
 Kanji didn't seem to know which question answer first for a moment, but then he apparently realized that he could simply kill two birds with one stone.
 
-"Yeah, that. Rise-senpai says she's human but inside she looked a lot like you, Senpai, with all this magical wiring thing."
+"Yeah, that. Rise-senpai says she's human but inside she looked a lot like you, Senpai, with all this magical wiring thingy."
 
 "When did Kujikawa-san scanned my---?" Emiya begun and then shook his head. "Never mind that now. Did she say 'Magic Circuits'? Are you _certain_?" he asked with pressing urgency.
 
@@ -570,7 +570,7 @@ A right hand held a kunai on Emiya's neck, the blade firmly pressed on his skin 
 
 "Don't even think on Reinforcing yourself," a female voice warned in a faux-peppy tone. "I _will_ know and that will be, well, icky."
 
-Yosuke watched through his widening eyes the battered figure of the female magus holding Shirou's at knifepoint --- to his horror, _his_ own forgotten knife.
+Yosuke watched through his widening eyes at the battered figure of the female magus holding Shirou's at knifepoint --- to his horror, _his_ own forgotten knife.
 
 "Now," she said nonchalantly. "Let's talk."
 
