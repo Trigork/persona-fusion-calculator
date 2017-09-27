@@ -35,13 +35,13 @@ const arcanaRank = (function() {
 angular.service('myAngularApp', function($route, $location, $window) {
   $route.when(
       '/list',
-      {template: 'list.html', controller: ListCtrl});
+      {template: '../template/list.html', controller: ListCtrl});
   $route.when(
       '/list/:sort_by',
-      {template: 'list.html', controller: ListCtrl});
+      {template: '../template/list.html', controller: ListCtrl});
   $route.when(
       '/persona/:persona_name',
-      {template: 'calc.html', controller: CalcCtrl});
+      {template: '../template/calc.html', controller: CalcCtrl});
 
   var self = this;
   $route.onChange(function() {
