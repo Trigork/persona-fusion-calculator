@@ -101,7 +101,7 @@ CalcCtrl.prototype.addRecipe = function(recipe) {
 };
 
 CalcCtrl.prototype.fuse2 = function(arcana, persona1, persona2) {
-  var level = 1 + Math.floor((persona1.level + persona2.level) / 2);
+  var level = Math.floor((persona1.level + persona2.level) / 2);
   var personae = personaeByArcana[arcana];
 
   for (var i = 0, persona = null; persona = personae[i]; i++) {
@@ -122,7 +122,7 @@ CalcCtrl.prototype.fuse2 = function(arcana, persona1, persona2) {
 }
 
 CalcCtrl.prototype.fuse3 = function(arcana, persona1, persona2, persona3) {
-  var level = 5 + Math.floor(
+  var level = Math.floor(
     (persona1.level + persona2.level + persona3.level) / 3);
   var personae = personaeByArcana[arcana];
 
