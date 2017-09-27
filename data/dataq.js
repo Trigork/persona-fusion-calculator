@@ -134,7 +134,8 @@ const personae = [
     {'arcana': 'Death',       'level': 38, 'name': 'Samael',            },
     {'arcana': 'Death',       'level': 47, 'name': 'Mot',               },
     {'arcana': 'Death',       'level': 58, 'name': 'Alice',             'special': true },
-    {'arcana': 'Death',       'level': 70, 'name': 'Thanatos',             'dlc': true },
+    {'arcana': 'Death',       'level': 63, 'name': 'Pale Rider',        'special': true },
+    {'arcana': 'Death',       'level': 70, 'name': 'Thanatos',          'dlc': true },
     {'arcana': 'Death',       'level': 78, 'name': 'Mahakala',          },
 
     {'arcana': 'Temperance',  'level':  3, 'name': 'Apsaras',           },
