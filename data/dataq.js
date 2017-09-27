@@ -37,6 +37,7 @@ const personae = [
     {'arcana': 'Empress',     'level': 42, 'name': 'Gabriel',           },
     {'arcana': 'Empress',     'level': 50, 'name': 'Skadi',             },
     {'arcana': 'Empress',     'level': 55, 'name': 'Mother Harlot',     },
+    {'arcana': 'Empress',     'level': 65, 'name': 'Lakshmi',           },
     {'arcana': 'Empress',     'level': 75, 'name': 'Alilat',            },
 
     {'arcana': 'Emperor',     'level': 9,  'name': 'Oberon',            },
@@ -112,7 +113,7 @@ const personae = [
     {'arcana': 'Strength',    'level': 17, 'name': 'Oni',               },
     {'arcana': 'Strength',    'level': 34, 'name': 'Rakshasa',          },
     {'arcana': 'Strength',    'level': 41, 'name': 'Hanuman',           },
-    {'arcana': 'Strength',    'level': 53, 'name': 'Ouyamatsumi',       'item': true },
+    {'arcana': 'Strength',    'level': 53, 'name': 'Ouyamatsumi',       'item': 'Amenotamu-zake', 'itemreq': 'Time for a Trial'},
     {'arcana': 'Strength',    'level': 58, 'name': 'Siegfried',         },
     {'arcana': 'Strength',    'level': 63, 'name': 'Kali',              },
     {'arcana': 'Strength',    'level': 80, 'name': 'Zaou-Gongen',       },
@@ -128,7 +129,7 @@ const personae = [
 
     {'arcana': 'Death',       'level': 6,  'name': 'Mokoi',             },
     {'arcana': 'Death',       'level': 22, 'name': 'Matador',           },
-    {'arcana': 'Death',       'level': 27, 'name': 'Turdak',            'item': true },
+    {'arcana': 'Death',       'level': 27, 'name': 'Turdak',            'item': 'Scarlet Brace', 'itemreq': 'Time for a Warm-up'},
     {'arcana': 'Death',       'level': 33, 'name': 'White Rider',       },
     {'arcana': 'Death',       'level': 38, 'name': 'Samael',            },
     {'arcana': 'Death',       'level': 47, 'name': 'Mot',               },
@@ -149,7 +150,7 @@ const personae = [
     {'arcana': 'Devil',       'level': 13, 'name': 'Incubus',           },
     {'arcana': 'Devil',       'level': 29, 'name': 'Succubus',          },
     {'arcana': 'Devil',       'level': 34, 'name': 'Pazuzu',            },
-    {'arcana': 'Devil',       'level': 39, 'name': 'Basilisk',          'item': true},
+    {'arcana': 'Devil',       'level': 39, 'name': 'Basilisk',          'item': 'Rock Dragon Wing', 'itemreq': 'Time to Test Your Skills'},
     {'arcana': 'Devil',       'level': 44, 'name': 'Lilith',            },
     {'arcana': 'Devil',       'level': 51, 'name': 'Belial',            },
     {'arcana': 'Devil',       'level': 63, 'name': 'Belphegor',         },
@@ -204,7 +205,7 @@ const personae = [
     {'arcana': 'Judgement',   'level': 71, 'name': 'Michael',           'special': true },
     {'arcana': 'Judgement',   'level': 77, 'name': 'Satan',             },
     {'arcana': 'Judgement',   'level': 82, 'name': 'Metatron',          },
-    {'arcana': 'Judgement',   'level': 87, 'name': 'Warrior Zeus',      'item': true},
+    {'arcana': 'Judgement',   'level': 87, 'name': 'Warrior Zeus',      'item': 'Blessed Loincloth', 'itemreq': 'Time for the Finale'},
     {'arcana': 'Judgement',   'level': 89, 'name': 'Ardha',             'special': true },
     {'arcana': 'Judgement',   'level': 91, 'name': 'Zeus',              'special': true },
     {'arcana': 'Judgement',   'level': 93, 'name': 'Lucifer',           },
@@ -231,6 +232,8 @@ const arcana2Combos = [
     {'source': ['Fool',       'Tower',      ], 'result': 'Hanged Man'  },
     {'source': ['Fool',       'Star',       ], 'result': 'Lovers'      },
     {'source': ['Fool',       'Moon',       ], 'result': 'Emperor'     },
+    {'source': ['Fool',       'Sun',        ], 'result': 'Hermit'      },
+    {'source': ['Fool',       'Judgement',  ], 'result': 'Star'        },
 
     {'source': ['Magician',   'Magician',   ], 'result': 'Magician'    },
     {'source': ['Magician',   'Priestess',  ], 'result': 'Chariot'     },
@@ -473,7 +476,7 @@ const arcana3Combos = [
     {'source': ['Emperor',    'Fool',       ], 'result': 'Star'        },
     {'source': ['Emperor',    'Magician',   ], 'result': 'Moon'        },
     {'source': ['Emperor',    'Priestess',  ], 'result': 'Empress'     },
-    {'source': ['Emperor',    'Empress',    ], 'result': 'Hanged'      },
+    {'source': ['Emperor',    'Empress',    ], 'result': 'Hanged Man'      },
 
     {'source': ['Hierophant', 'Fool',       ], 'result': 'Judgement'   },
     {'source': ['Hierophant', 'Magician',   ], 'result': 'Fortune'     },
@@ -481,15 +484,15 @@ const arcana3Combos = [
     {'source': ['Hierophant', 'Empress',    ], 'result': 'Tower'       },
     {'source': ['Hierophant', 'Emperor',    ], 'result': 'Lovers'      },
 
-    {'source': ['Lovers',     'Fool',       ], 'result': 'Death'       },
-    {'source': ['Lovers',     'Magician',   ], 'result': 'Fortune'     },
-    {'source': ['Lovers',     'Priestess',  ], 'result': 'Emperor'     },
+    {'source': ['Lovers',     'Fool',       ], 'result': 'Emperor'     },
+    {'source': ['Lovers',     'Magician',   ], 'result': 'Chariot'     },
+    {'source': ['Lovers',     'Priestess',  ], 'result': 'Fool'        },
     {'source': ['Lovers',     'Empress',    ], 'result': 'Temperance'  },
-    {'source': ['Lovers',     'Emperor',    ], 'result': 'Fortune'     },
-    {'source': ['Lovers',     'Hierophant', ], 'result': 'Strength'    },
+    {'source': ['Lovers',     'Emperor',    ], 'result': 'Devil'       },
+    {'source': ['Lovers',     'Hierophant', ], 'result': 'Moon'        },
 
     {'source': ['Chariot',    'Fool',       ], 'result': 'Sun'         },
-    {'source': ['Chariot',    'Magician',   ], 'result': 'Judgement'   },
+    {'source': ['Chariot',    'Magician',   ], 'result': 'Sun'         },
     {'source': ['Chariot',    'Priestess',  ], 'result': 'Sun'         },
     {'source': ['Chariot',    'Empress',    ], 'result': 'Priestess'   },
     {'source': ['Chariot',    'Emperor',    ], 'result': 'Hermit'      },
@@ -519,7 +522,7 @@ const arcana3Combos = [
     {'source': ['Fortune',    'Magician',   ], 'result': 'Hanged Man'  },
     {'source': ['Fortune',    'Priestess',  ], 'result': 'Hierophant'  },
     {'source': ['Fortune',    'Empress',    ], 'result': 'Strength'    },
-    {'source': ['Fortune',    'Emperor',    ], 'result': 'Sun'         },
+    {'source': ['Fortune',    'Emperor',    ], 'result': 'Empress'     },
     {'source': ['Fortune',    'Hierophant', ], 'result': 'Strength'    },
     {'source': ['Fortune',    'Lovers',     ], 'result': 'Tower'       },
     {'source': ['Fortune',    'Chariot',    ], 'result': 'Lovers'      },
@@ -541,7 +544,7 @@ const arcana3Combos = [
     {'source': ['Hanged Man', 'Fool',       ], 'result': 'Devil'       },
     {'source': ['Hanged Man', 'Magician',   ], 'result': 'Hermit'      },
     {'source': ['Hanged Man', 'Priestess',  ], 'result': 'Death'       },
-    {'source': ['Hanged Man', 'Empress',    ], 'result': 'Satr'        },
+    {'source': ['Hanged Man', 'Empress',    ], 'result': 'Star'        },
     {'source': ['Hanged Man', 'Emperor',    ], 'result': 'Fortune'     },
     {'source': ['Hanged Man', 'Hierophant', ], 'result': 'Tower'       },
     {'source': ['Hanged Man', 'Lovers',     ], 'result': 'Sun'         },
@@ -565,7 +568,7 @@ const arcana3Combos = [
     {'source': ['Death',      'Strength',   ], 'result': 'Lovers'      },
     {'source': ['Death',      'Hanged Man', ], 'result': 'Tower'       },
 
-    {'source': ['Temperance', 'Fool',       ], 'result': 'Hanged'      },
+    {'source': ['Temperance', 'Fool',       ], 'result': 'Hanged Man'  },
     {'source': ['Temperance', 'Magician',   ], 'result': 'Tower'       },
     {'source': ['Temperance', 'Priestess',  ], 'result': 'Star'        },
     {'source': ['Temperance', 'Empress',    ], 'result': 'Devil'       },
@@ -582,7 +585,7 @@ const arcana3Combos = [
 
     {'source': ['Devil',      'Fool',       ], 'result': 'Moon'        },
     {'source': ['Devil',      'Magician',   ], 'result': 'Empress'     },
-    {'source': ['Devil',      'Priestess',  ], 'result': 'Emperor'     },
+    {'source': ['Devil',      'Priestess',  ], 'result': 'Magician'    },
     {'source': ['Devil',      'Empress',    ], 'result': 'Tower'       },
     {'source': ['Devil',      'Emperor',    ], 'result': 'Fool'        },
     {'source': ['Devil',      'Hierophant', ], 'result': 'Star'        },
@@ -590,7 +593,7 @@ const arcana3Combos = [
     {'source': ['Devil',      'Chariot',    ], 'result': 'Temperance'  },
     {'source': ['Devil',      'Justice',    ], 'result': 'Fortune'     },
     {'source': ['Devil',      'Hermit',     ], 'result': 'Priestess'   },
-    {'source': ['Devil',      'Fortune',    ], 'result': 'Fool'        },
+    {'source': ['Devil',      'Fortune',    ], 'result': 'Hermit'      },
     {'source': ['Devil',      'Strength',   ], 'result': 'Hanged Man'  },
     {'source': ['Devil',      'Hanged Man', ], 'result': 'Chariot'     },
     {'source': ['Devil',      'Death',      ], 'result': 'Strength'    },
@@ -683,7 +686,7 @@ const arcana3Combos = [
     {'source': ['Judgement',  'Temperance', ], 'result': 'Hierophant'  },
     {'source': ['Judgement',  'Devil',      ], 'result': 'Tower'       },
     {'source': ['Judgement',  'Tower',      ], 'result': 'Fortune'     },
-    {'source': ['Judgement',  'Star',       ], 'result': 'Hanged'      },
+    {'source': ['Judgement',  'Star',       ], 'result': 'Hanged Man'  },
     {'source': ['Judgement',  'Moon',       ], 'result': 'Priestess'   },
     {'source': ['Judgement',  'Sun',        ], 'result': 'Lovers'      }
 
@@ -699,11 +702,4 @@ const specialCombos = [
     {'result': 'Michael', 'sources': ['Uriel', 'Raphael', 'Gabriel']},
     {'result': 'Zeus', 'sources': ['Warrior Zeus', 'Seth']},
     {'result': 'Ardha', 'sources': ['Parvati', 'Shiva']},
-    ];
-
-const specialItems = [
-    {'result': 'Ouyamatsumi', 'item': 'Amenotamu-zake', 'request': 'Time for a Trial'},
-    {'result': 'Turdak', 'item': 'Scarlet Brace', 'request': 'Time for a Warm-up'},
-    {'result': 'Basilisk', 'item': 'Rock Dragon Wing', 'request': 'Time to Test Your Skills'},
-    {'result': 'Warrior Zeus', 'item': 'Blessed Loincloth', 'request': 'Time for the Finale'}
     ];

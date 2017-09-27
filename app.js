@@ -105,7 +105,7 @@ CalcCtrl.prototype.fuse2 = function(arcana, persona1, persona2) {
   var personae = personaeByArcana[arcana];
 
   for (var i = 0, persona = null; persona = personae[i]; i++) {
-    if (persona.level >= level) {
+    if (persona.level > level) {
       if (persona.special) continue;
       break;
     }
@@ -122,13 +122,13 @@ CalcCtrl.prototype.fuse2 = function(arcana, persona1, persona2) {
 }
 
 CalcCtrl.prototype.fuse3 = function(arcana, persona1, persona2, persona3) {
-  var level = Math.floor(
+  var level = 5 + Math.floor(
     (persona1.level + persona2.level + persona3.level) / 3);
   var personae = personaeByArcana[arcana];
 
   var found = false;
   for (var i = 0, persona = null; persona = personae[i]; i++) {
-    if (persona.level >= level) {
+    if (persona.level > level) {
       if (persona.special) continue;
       found = true;
       break;

@@ -64,7 +64,7 @@ function Ctrl1() {
       return 0;
     }
     else {
-      var level = 1 + Math.floor((p1.level + p2.level) / 2);
+      var level = Math.floor((p1.level + p2.level) / 2);
       var bbb_ = [p1.arcana, p2.arcana].sort();
       var bbb = angular.Array.filter(arcana2Combos, function(x) {var ccc = x.source; ccc.sort(); return angular.equals(ccc, bbb_);});
       if (bbb.length) {
@@ -72,12 +72,12 @@ function Ctrl1() {
 	var personae = personaeByArcana[arcana];
 
         for (var i = 0, persona = null; persona = personae[i]; i++) {
-          if (persona.level >= level) {
+          if (persona.level > level) {
 	    if (persona.special) continue;
             break;
           }
         }
-      
+
 	if (i >= personae.length) {
 	  i = personae.length - 1;
 	}
@@ -108,7 +108,7 @@ var arrayUnique = function(a) {
   this.Fuse3 = function() {
     var p = [this.p1, p2 = this.p2, p3 = this.p3].sort(function (a, b) { return a.level - b.level || arcanaRank[b.arcana] -  arcanaRank[a.arcana]; });
     var pn = [p[0].name, p[1].name, p[2].name].sort();
-    var text = "p1: " + p[0].name + " (" + p[0].level + " " + p[0].arcana + ")\n" + 
+    var text = "p1: " + p[0].name + " (" + p[0].level + " " + p[0].arcana + ")\n" +
                "p2: " + p[1].name + " (" + p[1].level + " " + p[1].arcana + ")\n" +
                "p3: " + p[2].name + " (" + p[2].level + " " + p[2].arcana + ")";
     //alert(text);
@@ -134,16 +134,17 @@ var arrayUnique = function(a) {
 
       if (ddd.length) {
         /* I feel cheated. DoubleJump guide lied to me. The level is NOT calculated by the CURRENT level of the ingredients, but the game uses the DEFAULT level. Example: Scathach Lv99 + Pixie Lv2 + Orobas Lv 9 should fusion into Clotho, instead I get Fortuna.  */
-        //var level = 5 + Math.floor( (p[0].level + p[1].level + p[2].level) / 3 );
+        //var level = Math.floor( (p[0].level + p[1].level + p[2].level) / 3 );
         var level = 5 + Math.floor( (personaeByName[p[0].name].level + personaeByName[p[1].name].level + personaeByName[p[2].name].level) / 3 );
-        
+        console.log(level);
         var arcana = ddd[0].result;
         var personae = personaeByArcana[arcana];
 
         var found = false;
         for (var i = 0, persona = null; persona = personae[i]; i++) {
-          if (persona.level >= level) {
+          if (persona.level > level) {
             if (persona.special) continue;
+            if (persona == p[0] || persona == p[1] || persona == p[2]) continue;
             found = true;
             break;
           }

@@ -64,7 +64,7 @@ function Ctrl1() {
       return 0;
     }
     else {
-      var level = 1 + Math.floor((p1.level + p2.level) / 2);
+      var level = Math.floor((p1.level + p2.level) / 2);
       var bbb_ = [p1.arcana, p2.arcana].sort();
       var bbb = angular.Array.filter(arcana2Combos, function(x) {var ccc = x.source; ccc.sort(); return angular.equals(ccc, bbb_);});
       if (bbb.length) {
@@ -72,18 +72,18 @@ function Ctrl1() {
 	var personae = personaeByArcana[arcana];
 
         for (var i = 0, persona = null; persona = personae[i]; i++) {
-          if (persona.level >= level) {
+          if (persona.level > level) {
 	    if (persona.special) continue;
             break;
           }
         }
-      
+
 	if (i >= personae.length) {
 	  i = personae.length - 1;
 	}
-        //if (p1.arcana == p2.arcana) {
-          //i--;
-        //}
+        if (p1.arcana == p2.arcana) {
+          i--;
+        }
 	while ( i >= 0 && (personae[i].special || personae[i] == p1 || personae[i] == p2)) i--;
 
 	if (i < 0) {
