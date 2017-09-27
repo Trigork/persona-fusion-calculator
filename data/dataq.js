@@ -696,8 +696,8 @@ const arcana3Combos = [
 const specialCombos = [
     {'result': 'Black Frost', 'sources': ['Jack Frost', 'King Frost', 'Pyro Jack']},
     {'result': 'Norn', 'sources': ['Atropos', 'Lachesis', 'Clotho']},
-    {'result': 'Alice', 'sources': ['White Rider', 'Red Rider', 'Black Rider']},
-    {'result': 'Pale Rider', 'sources': ['Nebiros', 'Belial']},
+    {'result': 'Pale Rider', 'sources': ['White Rider', 'Red Rider', 'Black Rider']},
+    {'result': 'Alice', 'sources': ['Nebiros', 'Belial']},
     {'result': 'Beelzebub', 'sources': ['Astaroth', 'Baal Zebul']},
     {'result': 'Shiva', 'sources': ['Rangda', 'Barong']},
     {'result': 'Michael', 'sources': ['Uriel', 'Raphael', 'Gabriel']},
