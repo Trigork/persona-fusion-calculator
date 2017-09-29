@@ -1,0 +1,24 @@
+{
+  "name": "persona-fusion-calculator",
+  "version": "1.0.0",
+  "description": "Fusion Calculator for Persona Games",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trigork/persona-fusion-calculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Trigork/persona-fusion-calculator/issues"
+  },
+  "homepage": "https://github.com/Trigork/persona-fusion-calculator#readme",
+  "dependencies": {
+    "bower": "^1.8.2",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  }
+}

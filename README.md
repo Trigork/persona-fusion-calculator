@@ -2,7 +2,7 @@
 A tool to help calculate fusions in Persona Q: Shadow of the Labyrinth
 
 ## Running the tool
-You can see the latest version working at:
+You can see the latest stable version running at:
 https://triprojects.herokuapp.com/projects/pqfusion
 
 But you can just grab the latest release at the

@@ -1,0 +1,22 @@
+{
+  "name": "persona-fusion-calculator",
+  "description": "Fusion Calculator for Persona Games",
+  "main": "app.js",
+  "authors": [
+    "trigork <trigork@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Trigork/persona-fusion-calculator",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "fontawesome#^4.7.0",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
+  }
+}
