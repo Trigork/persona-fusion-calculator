@@ -19,7 +19,6 @@ version.
 To run the latest version of the tool locally just clone the repo and run:
 ```
 npm install
-bower install
 gulp build
 ```
 
@@ -31,6 +30,6 @@ After that you should have a ready-to-serve distirbution of the tool at the
 Forked from https://github.com/Wasuregusa/persona-fusion-calculator, demo for P3,
 P3FES, P4 and P4Golden available at: http://wasuregusa.github.io/persona-fusion-calculator
 
-Credit to the previous authors:
-[arantius](https://github.com/arantius/persona-fusion-calculator)
-[wasuregusa](https://github.com/Wasuregusa/persona-fusion-calculator)
+Credit to the previous authors:  
+[arantius](https://github.com/arantius/persona-fusion-calculator)  
+[wasuregusa](https://github.com/Wasuregusa/persona-fusion-calculator)  
