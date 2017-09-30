@@ -1,3 +1,42 @@
-body{
-  background-color: orange;
+/* Variables */
+$primary-color: #DDD;
+$background-color: #1e1e1e;
+$highlight-color: #faff0c;
+
+/* Space out content a bit */
+body {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  background-image: url('../img/velvet_embroidery.png');
+}
+
+td, label{
+  color: $primary-color;
+}
+
+/* Custom page header */
+.header {
+  padding-bottom: 1rem;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 3rem;
+}
+
+.container#main-wrapper{
+  border-radius: 5px;
+  background-color: $highlight-color;
+}
+
+.container#main-wrapper #title{
+  font-family: 'Vollkorn', serif;
+}
+
+.container#details-wrapper{
+  border-radius: 5px;
+  background-color: $background-color;
+  color: $primary-color;
+  font-family: 'Oswald', sans-serif;
 }

@@ -1,21 +1,35 @@
-<p>
-<label>Filter: <input type="text" size="30" name="filter"></label>
-<button ng:click="filter = ''">Clear</button>
-</p>
-<table id="list">
-<caption>Personae</caption>
-<thead>
-<tr>
-  <th><a href='#!/list/level'>Level</a></th>
-  <th><a href='#!/list/name'>Name</a></th>
-  <th><a href='#!/list/arcana'>Arcana</a></th>
-</tr>
-</thead>
-<tbody>
-<tr ng-repeat="persona in pList.personae | orderBy: pList.sortBy | filter: filter">
-  <td>{{persona.level}}</td>
-  <td><a href='#!/persona/{{persona.name}}'>{{persona.name}}</a></td>
-  <td>{{persona.arcana}}</td>
-</tr>
-</tbody>
-</table>
+<div class="row">
+    <div class="col-md-6">
+      <h3 id="title">Persona List</h3>
+    </div>
+    <div class="col-md-6">
+      <p>
+        <label>Filter: <input type="text" size="30" name="pList.filter" ng-model='pList.filter'></label>
+        <button ng:click="pList.filter = ''">Clear</button>
+      </p>
+    </div>
+</div>
+<div class="container" id="details-wrapper">
+    <div class="row" id="persona-list-header">
+      <div class="col-md-3">
+        <a href='#!/list/arcana'>Arcana</a>
+      </div>
+      <div class="col-md-6">
+        <a href='#!/list/name'>Name</a>
+      </div>
+      <div class="col-md-3">
+        <a href='#!/list/level'>Level</a>
+      </div>
+    </div>
+    <div class="row persona-item" ng-click="go('#!/persona/{{persona.name}}')" ng-repeat="persona in pList.personae | orderBy: pList.sortBy | filter: pList.filter">
+      <div class="col-md-3">
+        {{persona.arcana | uppercase }}
+      </div>
+      <div class="col-md-6">
+        {{persona.name}}
+      </div>
+      <div class="col-md-3">
+        {{persona.level}}
+      </div>
+    </div>
+</div>

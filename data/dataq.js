@@ -693,9 +693,9 @@ const arcana3Combos = [
 
     ];
 
-const forbiddenCombos = {
-  {'sources': ['Zeus', 'Warrior Zeus']};
-}
+const forbiddenCombos = [
+    {'sources': ['Zeus', 'Warrior Zeus']}
+];
 
 const specialCombos = [
     {'result': 'Black Frost', 'sources': ['Jack Frost', 'King Frost', 'Pyro Jack']},

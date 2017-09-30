@@ -1,67 +1,67 @@
-<h3>Normal Fusion</h3>
-<div>
-<table>
-  <tr>
-    <td colspan="2" align="center">Persona 1</td>
-    <td colspan="2" align="center">Persona 2</td>
-  </tr>
-  <tr>
-    <td><strong>Name: </strong></td>
-    <td>
-      <select ng-model="f2.p1.name" value="{{f2.p1.name}}" ng-options="ii for ii in f2.personae_names"></select>
-    </td>
-    <td><strong>Name: </strong></td>
-    <td>
-      <select ng-model="f2.p2.name" value="{{f2.p2.name}}" ng-options="ii for ii in f2.personae_names"></select>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <strong>Arcana:</strong>
-    </td>
-    <td>
-      {{ f2.p1.arcana = f2.personaeByName[f2.p1.name].arcana }}
-    </td>
-    <td>
-      <strong>Arcana:</strong>
-    </td>
-    <td>
-      {{ f2.p2.arcana = f2.personaeByName[f2.p2.name].arcana }}
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <strong>Level: </strong>
-    </td>
-    <td>
-      {{ f2.p1.level = f2.personaeByName[f2.p1.name].level }}
-    </td>
-    <td>
-      <strong>Level: </strong>
-    </td>
-    <td>
-      {{ f2.p2.level = f2.personaeByName[f2.p2.name].level }}
-    </td>
-  </tr>
-  <tr>
-    <td align="center" colspan="4">
-      <button ng-click="f2.Fuse()">Fuse!</button>
-    </td>
-  </tr>
-</table>
+<h3 id="title">Normal Fusion</h3>
+<div class="container" id="details-wrapper">
+  <table>
+    <tr>
+      <td colspan="2" align="center">Persona 1</td>
+      <td colspan="2" align="center">Persona 2</td>
+    </tr>
+    <tr>
+      <td><strong>Name: </strong></td>
+      <td>
+        <select ng-model="f2.p1.name" value="{{f2.p1.name}}" ng-options="ii for ii in f2.personae_names"></select>
+      </td>
+      <td><strong>Name: </strong></td>
+      <td>
+        <select ng-model="f2.p2.name" value="{{f2.p2.name}}" ng-options="ii for ii in f2.personae_names"></select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Arcana:</strong>
+      </td>
+      <td>
+        {{ f2.p1.arcana = f2.personaeByName[f2.p1.name].arcana }}
+      </td>
+      <td>
+        <strong>Arcana:</strong>
+      </td>
+      <td>
+        {{ f2.p2.arcana = f2.personaeByName[f2.p2.name].arcana }}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Level: </strong>
+      </td>
+      <td>
+        {{ f2.p1.level = f2.personaeByName[f2.p1.name].level }}
+      </td>
+      <td>
+        <strong>Level: </strong>
+      </td>
+      <td>
+        {{ f2.p2.level = f2.personaeByName[f2.p2.name].level }}
+      </td>
+    </tr>
+    <tr>
+      <td align="center" colspan="4">
+        <button ng-click="f2.Fuse()">Fuse!</button>
+      </td>
+    </tr>
+  </table>
 
-<span ng-show="f2.result.error != '' ">{{f2.result.error}}</span>
-<table ng-hide="f2.result.error != '' ">
-  <tr ng-repeat="res_persona in f2.result.personae">
-    <td>
-      {{res_persona.arcana}}
-    </td>
-    <td>
-      <a href="#!/persona/{{res_persona.name}}">{{res_persona.name}}</a>
-    </td>
-    <td>
-      {{res_persona.level}}
-    </td>
-  </tr>
-</table>
+  <span ng-show="f2.result.error != '' ">{{f2.result.error}}</span>
+  <table ng-hide="f2.result.error != '' ">
+    <tr ng-repeat="res_persona in f2.result.personae">
+      <td>
+        {{res_persona.arcana}}
+      </td>
+      <td>
+        <a href="#!/persona/{{res_persona.name}}">{{res_persona.name}}</a>
+      </td>
+      <td>
+        {{res_persona.level}}
+      </td>
+    </tr>
+  </table>
 </div>
