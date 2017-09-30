@@ -1,5 +1,5 @@
 personaFusion
-.controller('fuse3Ctrl', function($filter, $route, $routeParams){
+.controller('fuse3Ctrl', function($filter, $route, $routeParams, $location){
   this.result = {"error": "", "personae": []};
   this.personae_names = personae_names;
   this.personaeByName = personaeByName;
@@ -16,6 +16,7 @@ personaFusion
     }
     return range;
   };
+
   this.Fuse2 = function() {
     this.result = {"error": "", "personae": []};
     if (this.p1.name == this.p2.name) {

@@ -39,62 +39,22 @@ const personae_names = (function() {
   return personae_names_;
 })();
 
-// \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ //
-
-var personaFusion = angular.module('personaFusionApp', ['ngRoute'])
-.config(['$routeProvider', '$locationProvider',
-  function($routeProvider, $locationProvider) {
-    $routeProvider
-    .when(
-        '/list',
-        {templateUrl: 'template/list.html',
-        controller: 'listCtrl',
-        controllerAs: 'pList'}
-    )
-    .when(
-        '/list/:sort_by',
-        {templateUrl: 'template/list.html',
-        controller: 'listCtrl',
-        controllerAs: 'pList'}
-    )
-    .when(
-        '/persona/:persona_name',
-        {templateUrl: 'template/calc.html',
-        controller: 'calcCtrl',
-        controllerAs: 'pCalc'
-      }
-    )
-    .when(
-        '/fusion/normal',
-        {templateUrl: 'template/normal.html',
-        controller: 'fuse2Ctrl',
-        controllerAs: 'f2'
-      }
-    )
-    .when(
-        '/fusion/normal/:p1/:p2',
-        {templateUrl: 'template/normal.html',
-        controller: 'fuse2Ctrl',
-        controllerAs: 'f2'
-      }
-    )
-    .when(
-        '/fusion/triangle',
-        {templateUrl: 'template/triple.html',
-        controller: 'fuse3Ctrl',
-        controllerAs: 'f3'
-      }
-    )
-    .when(
-        '/fusion/triangle/:p1/:p2/:p3',
-        {templateUrl: 'template/triple.html',
-        controller: 'fuse3Ctrl',
-        controllerAs: 'f3'
-      }
-    )
-    .otherwise({
-        redirectTo: '/list'
-    })
-}]);
-
-// \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ //
+var personaFusion = angular.module('personaFusionApp', ['ngRoute', 'ngAnimate'])
+.run(
+function($location, $rootScope, $route, $routeParams, appConfig){
+  $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+        if (current.hasOwnProperty('$$route')) {
+            document.title = appConfig.baseTitle + ' | ' + current.$$route.title;
+            if ($routeParams.persona_name){
+              document.title += " (" + $routeParams.persona_name + ")"
+            }
+            if ($routeParams.p1 && $routeParams.p2){
+              document.title += " ( " + $routeParams.p1 + " + " + $routeParams.p2;
+              if ($routeParams.p3){
+                document.title += " + " + $routeParams.p3;
+              }
+              document.title += " )";
+            }
+        }
+    });
+});

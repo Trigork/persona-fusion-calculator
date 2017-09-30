@@ -1,5 +1,5 @@
 personaFusion
-.controller('fuse2Ctrl', function($filter, $route, $routeParams){
+.controller('fuse2Ctrl', function($filter, $route, $routeParams, $location){
   this.result = {"error": "", "personae": []};
   this.personae_names = personae_names;
   this.personaeByName = personaeByName;
@@ -15,6 +15,10 @@ personaFusion
     }
     return range;
   };
+
+  this.Fuse = function() {
+    $location.url('/fusion/normal/' + this.p1.name + '/' + this.p2.name);
+  }
 
   this.Fuse2 = function() {
     this.result = {"error": "", "personae": []};
@@ -40,8 +44,8 @@ personaFusion
 
         for (var i = 0, persona = null; persona = personae[i]; i++) {
           if (persona.level > level) {
-	    if (persona.special) continue;
-            break;
+	           if (persona.special) continue;
+             break;
           }
         }
 

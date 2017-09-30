@@ -4,7 +4,6 @@ Functionality:
   Fusion routes shouldn't be case sensitive:
     a) Lowercase Database and present capitalized texts with filters
     b) Index by capitalizing correctly
-  HTML5Mode for routing?
 
 Styling:
   Implement general navigation and layout
@@ -13,8 +12,5 @@ Styling:
 
 Build and Automation:
   Make gulp script to create the distributable version:
-    - Compile Sass
-    - Minify everything
-    - Change library routes to their minified counterparts in index.html
-      !! Beware of the BASE tag if using HTML5Mode !!
-    - Pack everything in a persona-fusion-calculator zip file for github release
+    - Add Bower Components to dist
+    - Fix index.html file to properly link files
