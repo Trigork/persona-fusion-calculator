@@ -1,20 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Persona Fusion Calculator</title>
+<title>Persona Fusion Calculator | Home </title>
+
+<!-- Libraries -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+
+<!-- Data Source -->
+<script src="data/dataq.js"></script>
+
+<!-- Main App -->
+<script src="app.js"></script>
+
+<!-- Controllers -->
+<script src="controller/calcCtrl.js"></script>
+<script src="controller/listCtrl.js"></script>
+<script src="controller/fuse2Ctrl.js"></script>
+<script src="controller/fuse3Ctrl.js"></script>
+
+
+<style>
+div.caption { text-align: center; width: 100%; }
+td { padding: 0 0.25em; }
+#list th { cursor: pointer; }
+th { text-align: left; }
+.pagination span { cursor: pointer; }
+</style>
 </head>
-<body>
+<body ng-app="personaFusionApp">
 
 <h2>Persona Fusion Calculator</h2>
 <ul>
   <li><strong>Persona Q: Shadow of the Labyrinth</strong>
     <ul>
-      <li><a href='fusion/normal.html'>Normal Fusion</a></li>
-      <li><a href='fusion/triple.html'>Triangle Fusion</a></li>
-      <li><a href='fusion/search.html'>Recipe Generator</a></li>
+      <li><a href='#!/list/name'>Persona List</a></li>
+      <li><a href='#!/fusion/normal'>Normal Fusion</a></li>
+      <li><a href='#!/fusion/triangle'>Triangle Fusion</a></li>
     </ul>
   </li>
 </ul>
+
+<ng-view></ng-view>
 
 </body>
 </html>
