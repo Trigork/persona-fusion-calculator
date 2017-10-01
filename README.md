@@ -24,6 +24,14 @@ gulp build
 After that you should have a ready-to-serve distribution of the tool at the
 `/dist/` folder.
 
+Note that as Cross-Origin requests from Angular will fail if not served from
+an html server, to avoid this and if you don't have any other html server
+on your system, you can run:
+```
+npm install http-server -g
+http-server location\to\app
+```
+
 ## Acknowledgements
 
 Forked from https://github.com/Wasuregusa/persona-fusion-calculator, demo for P3,
