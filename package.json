@@ -1,10 +1,10 @@
 {
   "name": "persona-fusion-calculator",
-  "version": "1.0.0",
+  "version": "0.1",
   "description": "Fusion Calculator for Persona Games",
   "main": "app.js",
   "scripts": {
-    "postinstall": "bower install"
+    "postinstall": "bower install && gulp sass"
   },
   "repository": {
     "type": "git",
@@ -26,8 +26,10 @@
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.1",
+    "gulp-html-replace": "^1.6.2",
     "gulp-htmlmin": "^3.0.0",
     "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
     "gulp-uglify-es": "^0.1.3",

@@ -10,6 +10,8 @@ var gulp = require('gulp'),
   pump = require('pump'),
   runSequence = require('run-sequence'),
   htmlmin = require('gulp-htmlmin'),
+  replace = require('gulp-replace'),
+  htmlreplace = require('gulp-html-replace'),
   zip = require('gulp-zip'),
   gutil = require('gulp-util');
 
@@ -33,10 +35,10 @@ gulp.task('build-sass', function () {
 
 gulp.task('build-js', function(){
     gulp.src(['app.js', 'app.config.js', 'app.routes.js', 'controller/*.js'])
-      .pipe(uglify().on('error', function(err) {
-          gutil.log(gutil.colors.red('[Error]'), err.toString());
-          this.emit('end');
-      }))
+      // .pipe(uglify().on('error', function(err) {
+      //      gutil.log(gutil.colors.red('[Error]'), err.toString());
+      //      this.emit('end');
+      // }))
       .pipe(concat('persona-fusion-calculator.js'))
       .pipe(rename({suffix: '.min'}))
       .pipe(gulp.dest('dist/html'));
@@ -45,7 +47,7 @@ gulp.task('build-js', function(){
 gulp.task('minify-data', function(){
     gulp.src(['data/*.js'])
       //.pipe(uglify())
-      .pipe(rename({suffix: '.min'}))
+      //.pipe(rename({suffix: '.min'}))
       .pipe(gulp.dest('dist/html/data'));
 });
 
@@ -60,12 +62,44 @@ gulp.task('export-libs', function(){
         'node_modules/angular/angular.min.js',
         'node_modules/angular-route/angular-route.min.js',
         'node_modules/angular-animate/angular-animate.min.js',
+        'bower_components/jquery/dist/jquery.slim.min.js',
+        "bower_components/popper.js/dist/umd/popper.min.js",
+        "bower_components/bootstrap/dist/js/bootstrap.min.js"
         ])
     .pipe(gulp.dest('dist/html/lib'));
 });
 
+gulp.task('export-css', function(){
+    gulp.src([
+        "bower_components/bootstrap/dist/css/bootstrap.min.css",
+        "bower_components/font-awesome/css/font-awesome.min.css"
+    ])
+    .pipe(gulp.dest('dist/html/css'));
+});
+
+gulp.task('export-img', function(){
+    gulp.src(["img/*.png", "img/*.jpg", "img/*.svg"])
+    .pipe(gulp.dest('dist/html/img'))
+})
+
 gulp.task('build-index', function(){
     gulp.src(['index.html'])
+    .pipe(htmlreplace({
+        applogic: {
+          src: null,
+          tpl: '<script src="persona-fusion-calculator.min.js"></script>'
+        }
+    }))
+    .pipe(replace(
+      /bower_components\/.*\/(.*\.min\.css)/g, 'css/$1'
+    ))
+    .pipe(replace(
+      /bower_components\/.*\/(.*\.min\.js)/g, 'lib/$1'
+    ))
+    .pipe(replace(
+      /node_modules\/.*\/(.*)\.js/g, 'lib/$1.min.js'
+    ))
+    .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('dist/html'));
 });
 
@@ -79,5 +113,5 @@ gulp.task('zip-build', function(){
 gulp.task('build', function(){
   runSequence('minify-data', 'build-sass', 'build-js',
             'build-templates', 'build-index', 'export-libs',
-            'zip-build')
+            'export-css', 'export-img', 'zip-build')
 });

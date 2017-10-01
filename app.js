@@ -65,4 +65,7 @@ function($location, $rootScope, $route, $routeParams, appConfig){
   $rootScope.go = function ( path ) {
     $location.path( path );
   };
+
+  $rootScope.version = appConfig.version
+  $rootScope.versionalias = appConfig.versionalias
 });

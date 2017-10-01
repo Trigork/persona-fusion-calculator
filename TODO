@@ -6,11 +6,10 @@ Functionality:
     b) Index by capitalizing correctly
 
 Styling:
-  Implement general navigation and layout
   Add some rad animations (single page ahoy!)
   Change level drop-downs to horizontal sliders
 
 Build and Automation:
   Make gulp script to create the distributable version:
-    - Add Bower Components to dist
-    - Fix index.html file to properly link files
+    - Uglify of main app file causes it to break
+    - Unable to minify JSON Persona Data
