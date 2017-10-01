@@ -1,6 +1,6 @@
 {
   "name": "persona-fusion-calculator",
-  "version": "0.1",
+  "version": "1.0.0",
   "description": "Fusion Calculator for Persona Games",
   "main": "app.js",
   "scripts": {
@@ -19,11 +19,12 @@
   "dependencies": {
     "angular": "^1.6.6",
     "angular-animate": "^1.6.6",
-    "angular-route": "^1.6.6",
-    "bower": "^1.8.2"
+    "angular-route": "^1.6.6"
   },
   "devDependencies": {
+    "bower": "^1.8.2",
     "gulp": "^3.9.1",
+    "del": "^3.0.0",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.1",
     "gulp-html-replace": "^1.6.2",

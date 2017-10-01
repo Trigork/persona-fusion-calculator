@@ -13,6 +13,7 @@ var gulp = require('gulp'),
   replace = require('gulp-replace'),
   htmlreplace = require('gulp-html-replace'),
   zip = require('gulp-zip'),
+  del = require('del'),
   gutil = require('gulp-util');
 
 gulp.task('sass', function () {
@@ -104,12 +105,23 @@ gulp.task('build-index', function(){
 });
 
 gulp.task('zip-build', function(){
-    gulp.src('dist/html/*')
+    gulp.src('dist/html/**')
         .pipe(zip('persona-fusion-calculator.zip'))
         .pipe(gulp.dest('dist'))
-})
+});
 
-// Default task
+gulp.task('clean:all', function(){
+  return del([
+      'dist',
+      'bower_components',
+      'node_modules'
+  ]);
+});
+
+gulp.task('clean:dist', function(){
+    return del('dist/html');
+});
+
 gulp.task('build', function(){
   runSequence('minify-data', 'build-sass', 'build-js',
             'build-templates', 'build-index', 'export-libs',

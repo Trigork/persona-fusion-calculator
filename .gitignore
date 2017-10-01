@@ -3,4 +3,5 @@ bower_components
 dist
 .tmp
 .sass-cache
+npm-debug.log
 css/*.css
