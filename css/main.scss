@@ -15,8 +15,39 @@ td, label{
   color: $primary-color;
 }
 
+#list th {
+  cursor: pointer;
+}
+
+th .sort-icon{
+  float: right;
+  margin-top: 4px;
+}
+
 a, a:visited, a:active, a:hover{
   color: $bright-color;
+}
+
+table.borderless, table.borderless th, table.borderless td{
+  border: 0px !important;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,.4);
+}
+
+.table-striped tbody tr:hover {
+    cursor: pointer;
+    background-color: rgba(255,255,255,.1);
+}
+
+#recipes.table-striped tbody tr:hover {
+    cursor: default;
+    background-color: rgba(255,255,255,.1);
+}
+
+.nav-pills .nav-link{
+  padding: .5rem .6rem;
 }
 
 .nav-pills .nav-link.active{
@@ -32,10 +63,16 @@ a, a:visited, a:active, a:hover{
   padding-bottom: 1rem;
 }
 /* Make the masthead heading the same height as the navigation */
-.header h3 {
+.header h2 {
   margin-top: 0;
   margin-bottom: 0;
   line-height: 3rem;
+  color: $primary-color;
+  margin-left: 15px;
+}
+
+.container#app-wrapper{
+  padding: 0px;
 }
 
 .container#main-wrapper{
@@ -47,11 +84,15 @@ a, a:visited, a:active, a:hover{
   font-family: 'Vollkorn', serif;
 }
 
+#title-row{
+  min-height: 67px;
+}
+
 #title{
   margin-bottom: 0px;
-  margin-top: 10px;
+  margin-top: 20px;
   padding-left: 20px;
-  font-size: 38pt;
+  font-size: 27pt;
 }
 
 #filter-input-wrapper{
@@ -67,7 +108,9 @@ a, a:visited, a:active, a:hover{
 }
 
 #footer{
-  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
   font-size: 10pt;
   font-style: italic;
 }

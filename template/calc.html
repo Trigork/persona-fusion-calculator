@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" id="title-row">
     <div class="col-md-6">
       <h3 id="title">{{pCalc.persona_name}} Recipes</h3>
     </div>
@@ -13,37 +13,30 @@
 </div>
 
 <div class="container" id="details-wrapper">
-  <p ng-hide="pCalc.persona">"{{pCalc.persona_name}}" not found!</p>
+    <p ng-hide="pCalc.persona">"{{pCalc.persona_name}}" not found!</p>
     <div ng-show="pCalc.persona">
         <div class="caption">
-          {{numRecipes}} Recipes - {{pCalc.persona.name}} ({{pCalc.persona.level}} / {{pCalc.persona.arcana}})
           <span style='color: slateblue;' ng-show='pCalc.persona.item'></br>Requires "{{pCalc.persona.item}}" from Elizabeth's request "{{pCalc.persona.itemreq}}"</span>
           <span style='color: red;' ng-show='pCalc.persona.dlc'></br>DLC Persona, must be downloaded and Summoned First!</span>
           <span style='color: green;' ng-show='pCalc.persona.special'></br>Special Fusion!</span>
-          <div class="pagination" ng-show="numRecipes > perPage">
-            <span ng-click="pageNum = 0">&#x25c4;<span style="position: relative; left: -0.4em;">&#x25c4;</span></span>
-            <span ng-click="pageNum = pageNum - 1">&#x25c4;</span>
-            Page {{pageNum + 1}} / {{ceil(numRecipes / perPage)}}
-            <span ng-click="pageNum = pageNum + 1">&#x25ba;</span>
-            <span ng-click="pageNum = lastPage"><span style="position: relative; right: -0.4em;">&#x25ba;</span>&#x25ba;</span>
-          </div>
         </div>
-        <table id="recipes">
-        <thead>
-          <th>#</th>
-          <th>Cost</th>
-          <th colspan="6">Ingredients</th>
-        </thead>
-        <tbody>
-          <tr ng-repeat="recipe in recipes">
-            <td>{{recipe.num + 1}}</td>
-            <td>{{recipe.cost | number}} ¥</td>
-            <td ng-repeat="persona in recipe.sources">
-              <a href='#!/persona/{{persona.name}}'>{{persona.name}}</a>
-              ({{persona.level}} / {{persona.arcana}})
-            </td>
-          </tr>
-        </tbody>
+        <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" >
+        </dir-pagination-controls>
+        <table width="100%" class='table table-striped borderless' id="recipes">
+          <thead>
+            <th>Cost</th>
+            <th colspan="3">Ingredients</th>
+          </thead>
+          <tbody>
+            <tr dir-paginate="recipe in recipes | filter: pCalc.filter | itemsPerPage:15">
+              <td>{{recipe.cost | number}} ¥</td>
+              <td ng-repeat="persona in recipe.sources">
+                <a href="#!/persona/{{persona.name}}">{{persona.name}}</a>
+              </td>
+            </tr>
+          </tbody>
         </table>
+        <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" >
+        </dir-pagination-controls>
     </div>
 </div>

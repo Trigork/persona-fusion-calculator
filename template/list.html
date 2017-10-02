@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" id="title-row">
     <div class="col-md-6">
       <h2 id="title" class="align-bottom">Persona List</h3>
     </div>
@@ -12,15 +12,24 @@
     </div>
 </div>
 <div class="container" id="details-wrapper">
-    <table width="100%" ts-wrapper class='table table-striped'>
+    <table width="100%" id="list" class='table table-striped borderless'>
         <thead>
             <tr>
-              <th ts-criteria="arcana">Arcana</th>
-              <th ts-criteria="name">Name</th>
-              <th ts-criteria="level" ts-default>Level</th>
+              <th ng-click="sort('arcana')">Arcana
+                <i class="fa sort-icon" ng-show="sortKey=='arcana'" ng-class="{'fa-chevron-circle-up':reverse,'fa-chevron-circle-down':!reverse}"></i>
+                <i class="fa sort-icon fa-minus-circle" ng-show="sortKey!='arcana'"></i>
+              </th>
+              <th ng-click="sort('name')">Name
+                <i class="fa sort-icon" ng-show="sortKey=='name'" ng-class="{'fa-chevron-circle-up':reverse,'fa-chevron-circle-down':!reverse}"></i>
+                <i class="fa sort-icon fa-minus-circle" ng-show="sortKey!='name'"></i>
+              </th>
+              <th ng-click="sort('level')">Level
+                <i class="fa sort-icon" ng-show="sortKey=='level'" ng-class="{'fa-chevron-circle-up':reverse,'fa-chevron-circle-down':!reverse}"></i>
+                <i class="fa sort-icon fa-minus-circle" ng-show="sortKey!='level'"></i>
+              </th>
             </tr>
         </thead>
-        <tr ts-repeat ts-hide-no-data class="persona-item" ng-click="goPersona(persona)" ng-repeat="persona in pList.personae | filter: pList.filter">
+        <tr class="persona-item" ng-click="goPersona(persona)" ng-repeat="persona in pList.personae | orderBy:sortKey:reverse | filter: pList.filter">
           <td>{{persona.arcana | uppercase }}</td>
           <td>{{persona.name}}</td>
           <td>{{persona.level}}</td>

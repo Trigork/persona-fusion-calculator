@@ -55,4 +55,7 @@ personaFusion
         controllerAs: 'f3'
       }
     )
+    .otherwise(
+      { redirectTo: '/list'}
+    )
 }]);

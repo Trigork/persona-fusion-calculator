@@ -28,13 +28,13 @@
 }
 
 .input__label {
+	margin-bottom: 0;
 	display: inline-block;
 	float: right;
 	padding: 0 1em;
 	width: 40%;
 	color: #6a7989;
 	font-weight: bold;
-	font-size: 70.25%;
 	-webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 	-webkit-touch-callout: none;
@@ -48,7 +48,7 @@
 .input__label-content {
 	position: relative;
 	display: block;
-	padding: 1.6em 0;
+	padding: 0.8em 0;
 	width: 100%;
 }
 
@@ -73,7 +73,7 @@
 
 .input__field--hoshi {
 	margin-top: 1em;
-	padding: 0.85em 0.15em;
+	padding: 0.85em 0.3em;
 	width: 100%;
 	background: transparent;
 	color: #595F6E;

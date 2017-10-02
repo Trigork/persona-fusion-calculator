@@ -39,7 +39,7 @@ const personae_names = (function() {
   return personae_names_;
 })();
 
-var personaFusion = angular.module('personaFusionApp', ['ngRoute', 'ngAnimate', 'tableSort'])
+var personaFusion = angular.module('personaFusionApp', ['ngRoute', 'ngAnimate', 'angularUtils.directives.dirPagination'])
 .run(
 function($location, $rootScope, $route, $routeParams, appConfig){
   $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
@@ -65,6 +65,11 @@ function($location, $rootScope, $route, $routeParams, appConfig){
   $rootScope.goPersona = function ( persona ) {
       $location.path("persona/" + persona.name)
   };
+
+  $rootScope.sort = function(keyname){
+        $rootScope.sortKey = keyname;   //set the sortKey to the param passed
+        $rootScope.reverse = !$rootScope.reverse; //if true make it false and vice versa
+    }
 
   $rootScope.version = appConfig.version
   $rootScope.versionalias = appConfig.versionalias

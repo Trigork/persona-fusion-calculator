@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="bower_components/tether/dist/css/tether.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="node_modules/angular-tablesort/tablesort.css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Vollkorn:700i">
@@ -18,7 +16,7 @@
     <title>Persona Q Fusion Calculator</title>
   </head>
   <body ng-app="personaFusionApp">
-      <div class="container">
+      <div class="container" id="app-wrapper">
 
           <div class="header clearfix">
             <nav>
@@ -34,7 +32,7 @@
                 </li>
               </ul>
             </nav>
-            <h3 class="text-muted">Persona Q Fusion Calculator</h3>
+            <h2>Persona Q Fusion Calculator</h2>
           </div>
 
           <div class="container" id="main-wrapper">
@@ -63,12 +61,12 @@
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-route/angular-route.js"></script>
     <script src="node_modules/angular-animate/angular-animate.js"></script>
-    <script src="node_modules/angular-tablesort/js/angular-tablesort.js"></script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="bower_components/angularUtils-pagination/dirPagination.js"></script>
     <script src="bower_components/jquery/dist/jquery.slim.min.js"></script>
-    <script src="bower_components/tether/dist/js/tether.min.js"></script>
+    <script src="bower_components/popper.js/dist/umd/popper.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/classie.js"></script>
 

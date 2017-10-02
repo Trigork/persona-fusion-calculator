@@ -24,6 +24,9 @@ personaFusion
     // to have the highest current level) is always listed first.  In case
     // of a tie in level, the persona with the lowest arcana rank is used.
     recipe.sources = $filter('orderBy')(recipe.sources, [ '-level', this.getRank ]);
+    if (recipe.sources.length == 2) {
+      recipe.sources.push("");
+    }
     $scope.allRecipes.push(recipe);
   }
 
