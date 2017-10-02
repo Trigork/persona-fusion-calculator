@@ -60,18 +60,21 @@ gulp.task('build-templates', function(){
 
 gulp.task('export-libs', function(){
     gulp.src([
+        'js/classie.js',
         'node_modules/angular/angular.min.js',
         'node_modules/angular-route/angular-route.min.js',
         'node_modules/angular-animate/angular-animate.min.js',
         'bower_components/jquery/dist/jquery.slim.min.js',
         "bower_components/popper.js/dist/umd/popper.min.js",
-        "bower_components/bootstrap/dist/js/bootstrap.min.js"
+        "bower_components/bootstrap/dist/js/bootstrap.min.js",
+        'bower_components/angularUtils-pagination/dirPagination.js'
         ])
     .pipe(gulp.dest('dist/html/lib'));
 });
 
 gulp.task('export-css', function(){
     gulp.src([
+        "css/set1.css",
         "bower_components/bootstrap/dist/css/bootstrap.min.css",
         "bower_components/font-awesome/css/font-awesome.min.css"
     ])
@@ -81,6 +84,11 @@ gulp.task('export-css', function(){
 gulp.task('export-img', function(){
     gulp.src(["img/*.png", "img/*.jpg", "img/*.svg"])
     .pipe(gulp.dest('dist/html/img'))
+})
+
+gulp.task('export-fonts', function(){
+    gulp.src(["bower_components/font-awesome/fonts/*\.*"])
+    .pipe(gulp.dest('dist/html/fonts'))
 })
 
 gulp.task('build-index', function(){
@@ -95,7 +103,10 @@ gulp.task('build-index', function(){
       /bower_components\/.*\/(.*\.min\.css)/g, 'css/$1'
     ))
     .pipe(replace(
-      /bower_components\/.*\/(.*\.min\.js)/g, 'lib/$1'
+      /js\/(.*\.js)/g, 'lib/$1'
+    ))
+    .pipe(replace(
+      /bower_components\/.*\/(.*\.js)/g, 'lib/$1'
     ))
     .pipe(replace(
       /node_modules\/.*\/(.*)\.js/g, 'lib/$1.min.js'
@@ -125,5 +136,5 @@ gulp.task('clean:dist', function(){
 gulp.task('build', function(){
   runSequence('minify-data', 'build-sass', 'build-js',
             'build-templates', 'build-index', 'export-libs',
-            'export-css', 'export-img', 'zip-build')
+            'export-css', 'export-img', 'export-fonts')
 });
