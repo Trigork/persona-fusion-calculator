@@ -18,6 +18,8 @@
     "font-awesome": "fontawesome#^4.7.0",
     "jquery": "^3.2.1",
     "popper.js": "^1.12.5",
-    "bootstrap": "v4.0.0-alpha.6"
+    "bootstrap": "v4.0.0-alpha.6",
+    "bootstrap-table": "^1.11.1",
+    "tether": "^1.4.0"
   }
 }

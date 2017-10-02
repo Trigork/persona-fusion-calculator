@@ -2,6 +2,7 @@
 $primary-color: #DDD;
 $background-color: #1e1e1e;
 $highlight-color: #faff0c;
+$bright-color: #4cffff;
 
 /* Space out content a bit */
 body {
@@ -13,6 +14,18 @@ body {
 td, label{
   color: $primary-color;
 }
+
+a, a:visited, a:active, a:hover{
+  color: $bright-color;
+}
+
+.nav-pills .nav-link.active{
+  background-color: $highlight-color;
+  color: $background-color;
+  font-weight: bold;
+}
+
+
 
 /* Custom page header */
 .header {
@@ -34,11 +47,23 @@ td, label{
   font-family: 'Vollkorn', serif;
 }
 
+#title{
+  margin-bottom: 0px;
+  margin-top: 10px;
+  padding-left: 20px;
+  font-size: 38pt;
+}
+
+#filter-input-wrapper{
+  margin: 0px;
+  margin-right: 10px;
+}
+
 .container#details-wrapper{
   border-radius: 5px;
   background-color: $background-color;
   color: $primary-color;
-  font-family: 'Oswald', sans-serif;
+  padding: 0px;
 }
 
 #footer{

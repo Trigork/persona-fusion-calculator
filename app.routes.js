@@ -3,15 +3,7 @@ personaFusion
   function($routeProvider, $locationProvider, appConfig) {
     $routeProvider
     .when(
-        '/list',
-        {
-        title: 'Persona List',
-        templateUrl: 'template/list.html',
-        controller: 'listCtrl',
-        controllerAs: 'pList'}
-    )
-    .when(
-        '/list/:sort_by',
+        '/list/',
         {
         title: 'Persona List',
         templateUrl: 'template/list.html',
@@ -63,7 +55,4 @@ personaFusion
         controllerAs: 'f3'
       }
     )
-    .otherwise({
-        redirectTo: '/list'
-    });
 }]);

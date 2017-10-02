@@ -1,35 +1,29 @@
 <div class="row">
     <div class="col-md-6">
-      <h3 id="title">Persona List</h3>
+      <h2 id="title" class="align-bottom">Persona List</h3>
     </div>
-    <div class="col-md-6">
-      <p>
-        <label>Filter: <input type="text" size="30" name="pList.filter" ng-model='pList.filter'></label>
-        <button ng:click="pList.filter = ''">Clear</button>
-      </p>
+    <div class="col-md-6 text-right">
+      <span class="input input--hoshi" id="filter-input-wrapper">
+      	<input ng-model='pList.filter' class="input__field input__field--hoshi" type="text" id="filter-input" />
+      	<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="filter-input">
+      		<span class="input__label-content input__label-content--hoshi">Persona Filter</span>
+      	</label>
+      </span>
     </div>
 </div>
 <div class="container" id="details-wrapper">
-    <div class="row" id="persona-list-header">
-      <div class="col-md-3">
-        <a href='#!/list/arcana'>Arcana</a>
-      </div>
-      <div class="col-md-6">
-        <a href='#!/list/name'>Name</a>
-      </div>
-      <div class="col-md-3">
-        <a href='#!/list/level'>Level</a>
-      </div>
-    </div>
-    <div class="row persona-item" ng-click="go('#!/persona/{{persona.name}}')" ng-repeat="persona in pList.personae | orderBy: pList.sortBy | filter: pList.filter">
-      <div class="col-md-3">
-        {{persona.arcana | uppercase }}
-      </div>
-      <div class="col-md-6">
-        {{persona.name}}
-      </div>
-      <div class="col-md-3">
-        {{persona.level}}
-      </div>
-    </div>
+    <table width="100%" ts-wrapper class='table table-striped'>
+        <thead>
+            <tr>
+              <th ts-criteria="arcana">Arcana</th>
+              <th ts-criteria="name">Name</th>
+              <th ts-criteria="level" ts-default>Level</th>
+            </tr>
+        </thead>
+        <tr ts-repeat ts-hide-no-data class="persona-item" ng-click="goPersona(persona)" ng-repeat="persona in pList.personae | filter: pList.filter">
+          <td>{{persona.arcana | uppercase }}</td>
+          <td>{{persona.name}}</td>
+          <td>{{persona.level}}</td>
+        </tr>
+    </table>
 </div>

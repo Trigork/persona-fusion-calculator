@@ -39,7 +39,7 @@ const personae_names = (function() {
   return personae_names_;
 })();
 
-var personaFusion = angular.module('personaFusionApp', ['ngRoute', 'ngAnimate'])
+var personaFusion = angular.module('personaFusionApp', ['ngRoute', 'ngAnimate', 'tableSort'])
 .run(
 function($location, $rootScope, $route, $routeParams, appConfig){
   $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
@@ -62,8 +62,8 @@ function($location, $rootScope, $route, $routeParams, appConfig){
     return ($location.path().substr(0, path.length) === path) ? 'active' : '';
   }
 
-  $rootScope.go = function ( path ) {
-    $location.path( path );
+  $rootScope.goPersona = function ( persona ) {
+      $location.path("persona/" + persona.name)
   };
 
   $rootScope.version = appConfig.version
