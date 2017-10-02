@@ -1,6 +1,6 @@
 personaFusion
 .constant('appConfig', {
-  version: '0.1',
-  versionalias: 'theuglybutfunctional',
+  version: '0.2',
+  versionalias: 'almostpretty',
   baseTitle: 'Persona Q Fusion Calculator'
 });
