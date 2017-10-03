@@ -79,6 +79,7 @@ personaFusion
 
   this.autoCompleteOptions = {
         minimumChars: 0,
+        dropdownHeight: '200px',
         activateOnFocus: true,
         data: function (term) {
             term = term.toUpperCase();

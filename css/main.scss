@@ -186,11 +186,15 @@ ul.pagination li.active a{
   color: $background-color;
 }
 
+.pre-fuse-card h4{
+  margin-bottom: 0px;
+}
+
 .fuse-button{
   text-align: center;
   padding: 0px 25px;
   margin-top: 10px;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 .fuse-button .btn{
@@ -204,4 +208,8 @@ ul.pagination li.active a{
   padding: 15px;
   font-size: 11pt;
   font-style: italic;
+}
+
+#footer a{
+  color: darken($bright-color, 40%);
 }

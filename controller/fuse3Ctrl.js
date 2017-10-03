@@ -5,9 +5,9 @@ personaFusion
   this.personaeByName = personaeByName;
   this.arcanaRank = arcanaRank;
 
-  this.p1 = {};
-  this.p2 = {};
-  this.p3 = {};
+  this.p1 = {name: "", arcana: "", level: 0};
+  this.p2 = {name: "", arcana: "", level: 0};
+  this.p3 = {name: "", arcana: "", level: 0};
 
   this.range99 = function(min) {
     var range = [];
@@ -158,14 +158,41 @@ var arrayUnique = function(a) {
     }
   }
 
+  this.refreshSlider = function () {
+      $timeout(function () {
+          $scope.$broadcast('rzSliderForceRender');
+      });
+  };
+
   this.autoCompleteOptions = {
         minimumChars: 0,
+        dropdownHeight: '200px',
         activateOnFocus: true,
         data: function (term) {
             term = term.toUpperCase();
             return _.filter(personae_names, function (value) {
                 return value.toUpperCase().startsWith(term);
             });
+        },
+        itemSelected: function (item) {
+            this.refreshSlider();
         }
     }
+
+  this.defaultMinLevel = function(p){
+    if (this.personaeByName[p.name]){
+      return this.personaeByName[p.name].level;
+    } else {
+      return 0;
+    }
+  }
+
+  this.sliderOptions = {p1: "", p2: "", p3: ""};
+
+  this.sliderOptions.p1 = {
+      options: {
+        floor: this.defaultMinLevel(this.p1),
+        ceil: 99
+      }
+    };
 });

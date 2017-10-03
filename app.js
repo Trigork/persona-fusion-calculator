@@ -39,7 +39,7 @@ const personae_names = (function() {
   return personae_names_;
 })();
 
-var personaFusion = angular.module('personaFusionApp', ['ngRoute', 'ngAnimate', 'angularUtils.directives.dirPagination', 'autoCompleteModule'])
+var personaFusion = angular.module('personaFusionApp', ['ngRoute', 'ngAnimate', 'angularUtils.directives.dirPagination', 'autoCompleteModule', 'rzModule'])
 .run(
 function($location, $rootScope, $route, $routeParams, appConfig){
   $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
@@ -71,6 +71,6 @@ function($location, $rootScope, $route, $routeParams, appConfig){
         $rootScope.reverse = !$rootScope.reverse; //if true make it false and vice versa
   }
 
-  $rootScope.version = appConfig.version
-  $rootScope.versionalias = appConfig.versionalias
+  $rootScope.version = appConfig.version;
+  $rootScope.versionalias = appConfig.versionalias;
 });

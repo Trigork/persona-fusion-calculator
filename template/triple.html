@@ -7,28 +7,64 @@
   <div class="row">
     <div class="col-md-4">
       <div class="pre-fuse-card">
-        <input type="text" placeholder="Persona Name" ng-model="f3.p1.name" auto-complete="f3.autoCompleteOptions" />
+        <h4>Persona 1</h4>
+        <span class="input input--hoshi" id="filter-input-wrapper">
+          <input ng-model="f3.p1.name"
+           auto-complete="f3.autoCompleteOptions" class="input__field input__field--hoshi"
+           type="text" id="filter-input">
+          </input>
+          <label class="input__label input__label--hoshi input__label--hoshi-color-2" for="filter-input">
+            <span class="input__label-content input__label-content--hoshi">Name</span>
+          </label>
+          <i class="fa sort-icon fa-times-circle" id="clear-filter" ng-click="f3.p1.name=''"></i>
+        </span>
         <div class="pre-fuse-info">
+            <div>
+                <rzslider rz-slider-model="f3.p1.level"  rz-slider-options="{floor: f3.defaultMinLevel(f3.p1), ceil: 99}"></rzslider>
+            </div>
             {{ f3.p1.arcana = f3.personaeByName[f3.p1.name].arcana }}
-            <select ng-model="f3.p1.level" ng-options="ii for ii in f3.range99(f3.personaeByName[f3.p1.name].level)"></select>
         </div>
       </div>
     </div>
     <div class="col-md-4">
       <div class="pre-fuse-card">
-        <input type="text" placeholder="Persona Name" ng-model="f3.p2.name" auto-complete="f3.autoCompleteOptions" />
+        <h4>Persona 2</h4>
+        <span class="input input--hoshi" id="filter-input-wrapper">
+          <input ng-model="f3.p2.name"
+           auto-complete="f3.autoCompleteOptions" class="input__field input__field--hoshi"
+           type="text" id="filter-input">
+          </input>
+          <label class="input__label input__label--hoshi input__label--hoshi-color-2" for="filter-input">
+            <span class="input__label-content input__label-content--hoshi">Name</span>
+          </label>
+          <i class="fa sort-icon fa-times-circle" id="clear-filter" ng-click="f3.p2.name=''"></i>
+        </span>
         <div class="pre-fuse-info">
+            <div>
+                <rzslider rz-slider-model="f3.p2.level"  rz-slider-options="{floor: f3.defaultMinLevel(f3.p2), ceil: 99}"></rzslider>
+            </div>
             {{ f3.p2.arcana = f3.personaeByName[f3.p2.name].arcana }}
-            <select ng-model="f3.p2.level" ng-options="ii for ii in f3.range99(f3.personaeByName[f3.p2.name].level)"></select>
         </div>
       </div>
     </div>
     <div class="col-md-4">
       <div class="pre-fuse-card">
-        <input type="text" placeholder="Persona Name" ng-model="f3.p3.name" auto-complete="f3.autoCompleteOptions" />
+        <h4>Persona 3</h4>
+        <span class="input input--hoshi" id="filter-input-wrapper">
+          <input ng-model="f3.p3.name"
+           auto-complete="f3.autoCompleteOptions" class="input__field input__field--hoshi"
+           type="text" id="filter-input">
+          </input>
+          <label class="input__label input__label--hoshi input__label--hoshi-color-2" for="filter-input">
+            <span class="input__label-content input__label-content--hoshi">Name</span>
+          </label>
+          <i class="fa sort-icon fa-times-circle" id="clear-filter" ng-click="f3.p3.name=''"></i>
+        </span>
         <div class="pre-fuse-info">
+            <div>
+                <rzslider rz-slider-model="f3.p3.level"  rz-slider-options="{floor: f3.defaultMinLevel(f3.p3), ceil: 99}"></rzslider>
+            </div>
             {{ f3.p3.arcana = f3.personaeByName[f3.p3.name].arcana }}
-            <select ng-model="f3.p3.level" ng-options="ii for ii in f3.range99(f3.personaeByName[f3.p3.name].level)"></select>
         </div>
       </div>
     </div>

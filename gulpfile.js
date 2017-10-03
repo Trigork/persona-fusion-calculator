@@ -61,13 +61,14 @@ gulp.task('build-templates', function(){
 gulp.task('export-libs', function(){
     gulp.src([
         'js/classie.js',
+        'js/underscore.min.js',
         'node_modules/angular/angular.min.js',
         'node_modules/angular-route/angular-route.min.js',
         'node_modules/angular-animate/angular-animate.min.js',
         'node_modules/angular-sanitize/angular-sanitize.min.js',
-        'js/underscore.min.js',
-        'bower_components/jquery/dist/jquery.slim.min.js',
+        'bower_components/jquery/dist/jquery.min.js',
         "bower_components/popper.js/dist/umd/popper.min.js",
+        "bower_components/angularjs-slider/dist/rzslider.min.js",
         "bower_components/bootstrap/dist/js/bootstrap.min.js",
         'bower_components/angularUtils-pagination/dirPagination.js',
         'bower_components/angular-auto-complete/angular-auto-complete.js'
@@ -81,6 +82,7 @@ gulp.task('export-css', function(){
         "bower_components/animate.css/animate.min.css",
         "bower_components/bootstrap/dist/css/bootstrap.min.css",
         "bower_components/font-awesome/css/font-awesome.min.css",
+        "bower_components/angularjs-slider/dist/rzslider.min.css",
         'bower_components/angular-auto-complete/angular-auto-complete.css'
     ])
     .pipe(gulp.dest('dist/html/css'));
