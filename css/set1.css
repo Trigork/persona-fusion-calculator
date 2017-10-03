@@ -127,13 +127,17 @@
 }
 
 .input__field--hoshi:focus + .input__label--hoshi::after,
-.input--filled .input__label--hoshi::after {
+.input--filled .input__label--hoshi::after,
+.input__field--hoshi.ng-not-empty + .input__label--hoshi::after
+ {
 	-webkit-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
 }
 
 .input__field--hoshi:focus + .input__label--hoshi .input__label-content--hoshi,
-.input--filled .input__label-content--hoshi {
+.input--filled .input__label-content--hoshi,
+.input__field--hoshi.ng-not-empty + .input__label--hoshi .input__label-content--hoshi
+{
 	-webkit-animation: anim-1 0.3s forwards;
 	animation: anim-1 0.3s forwards;
 }

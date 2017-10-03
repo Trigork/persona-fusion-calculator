@@ -1,7 +1,7 @@
 /* Variables */
 $primary-color: #DDD;
 $background-color: #1e1e1e;
-$highlight-color: #faff0c;
+$highlight-color: #ffbf00;
 $bright-color: #4cffff;
 
 /* Space out content a bit */
@@ -26,6 +26,10 @@ th .sort-icon{
 
 a, a:visited, a:active, a:hover{
   color: $bright-color;
+}
+
+table{
+  margin-bottom: 0px !important;
 }
 
 table.borderless, table.borderless th, table.borderless td{
@@ -98,7 +102,64 @@ table.borderless, table.borderless th, table.borderless td{
 #filter-input-wrapper{
   margin: 0px;
   margin-right: 10px;
+  position: relative;
 }
+
+#clear-filter{
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  bottom: 17px;
+  display: none;
+}
+
+#filter-input-wrapper input.ng-not-empty ~ #clear-filter{
+  display: block;
+}
+
+ul.pagination{
+  margin-bottom: 0px;
+  display: flex;
+  padding: 15px;
+}
+
+ul.pagination li{
+  flex-grow: 1;
+  display: inline-block;
+  text-align: center;
+  font-size: 13pt;
+}
+
+ul.pagination li a{
+  line-height: 2;
+  display: block;
+  border: 1px solid #444;
+  background-color: #333;
+  text-align: center;
+  height: 40px;
+}
+
+ul.pagination li:nth-child(1) a{
+  border-radius: 20px 0px 0px 20px;
+}
+
+ul.pagination li:last-child a{
+  border-radius: 0px 20px 20px 0px;
+}
+
+ul.pagination li a:active,
+ul.pagination li a:hover,
+{
+  text-decoration: none;
+}
+
+ul.pagination li.active a{
+  color: $background-color;
+  border-color: $bright-color;
+  background-color: $bright-color;
+  font-weight: bold;
+}
+
 
 .container#details-wrapper{
   border-radius: 5px;
@@ -107,10 +168,16 @@ table.borderless, table.borderless th, table.borderless td{
   padding: 0px;
 }
 
+.container#details-wrapper.ng-enter {
+  animation: fadeIn 1s;
+}
+
+.container#details-wrapper.ng-leave {
+  animation: fadeOut 1s;
+}
+
 #footer{
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 15px;
-  font-size: 10pt;
+  padding: 15px;
+  font-size: 11pt;
   font-style: italic;
 }

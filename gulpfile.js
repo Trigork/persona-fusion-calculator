@@ -75,6 +75,7 @@ gulp.task('export-libs', function(){
 gulp.task('export-css', function(){
     gulp.src([
         "css/set1.css",
+        "bower_components/animate.css/animate.min.css",
         "bower_components/bootstrap/dist/css/bootstrap.min.css",
         "bower_components/font-awesome/css/font-awesome.min.css"
     ])

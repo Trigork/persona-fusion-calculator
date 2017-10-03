@@ -1,17 +1,21 @@
 <div class="row" id="title-row">
-    <div class="col-md-6">
+    <div class="col-md-6 text-xs-center">
       <h2 id="title" class="align-bottom">Persona List</h3>
     </div>
-    <div class="col-md-6 text-right">
+    <div class="col-md-6 text-right text-xs-center">
       <span class="input input--hoshi" id="filter-input-wrapper">
-      	<input ng-model='pList.filter' class="input__field input__field--hoshi" type="text" id="filter-input" />
+      	<input ng-model='pList.filter' class="input__field input__field--hoshi" type="text" id="filter-input">
+        </input>
       	<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="filter-input">
       		<span class="input__label-content input__label-content--hoshi">Persona Filter</span>
       	</label>
+        <i class="fa sort-icon fa-times-circle" id="clear-filter" ng-click="pList.filter=''"></i>
       </span>
     </div>
 </div>
 <div class="container" id="details-wrapper">
+    <dir-pagination-controls max-size="6" direction-links="true">
+    </dir-pagination-controls>
     <table width="100%" id="list" class='table table-striped borderless'>
         <thead>
             <tr>
@@ -29,10 +33,12 @@
               </th>
             </tr>
         </thead>
-        <tr class="persona-item" ng-click="goPersona(persona)" ng-repeat="persona in pList.personae | orderBy:sortKey:reverse | filter: pList.filter">
+        <tr class="persona-item" ng-click="goPersona(persona)" dir-paginate="persona in pList.personae | orderBy:sortKey:reverse | filter: pList.filter | itemsPerPage: 15">
           <td>{{persona.arcana | uppercase }}</td>
           <td>{{persona.name}}</td>
           <td>{{persona.level}}</td>
         </tr>
     </table>
+    <dir-pagination-controls max-size="6" direction-links="true">
+    </dir-pagination-controls>
 </div>
