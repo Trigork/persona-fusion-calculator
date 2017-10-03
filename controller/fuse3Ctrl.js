@@ -158,10 +158,14 @@ var arrayUnique = function(a) {
     }
   }
 
-  if(personaeByName[$routeParams.p1] && personaeByName[$routeParams.p2] && personaeByName[$routeParams.p3]){
-    this.p1 = personaeByName[$routeParams.p1];
-    this.p2 = personaeByName[$routeParams.p2];
-    this.p3 = personaeByName[$routeParams.p3];
-    this.Fuse3();
-  }
+  this.autoCompleteOptions = {
+        minimumChars: 0,
+        activateOnFocus: true,
+        data: function (term) {
+            term = term.toUpperCase();
+            return _.filter(personae_names, function (value) {
+                return value.toUpperCase().startsWith(term);
+            });
+        }
+    }
 });

@@ -21,6 +21,7 @@
     "bootstrap": "v4.0.0-beta",
     "tether": "^1.4.0",
     "angularUtils-pagination": "angular-utils-pagination#^0.11.1",
-    "animate.css": "^3.5.2"
+    "animate.css": "^3.5.2",
+    "angular-auto-complete": "^1.4.2"
   }
 }

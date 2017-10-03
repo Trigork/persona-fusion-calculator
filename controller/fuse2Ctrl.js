@@ -76,4 +76,16 @@ personaFusion
     this.p2 = personaeByName[$routeParams.p2];
     this.Fuse2();
   }
+
+  this.autoCompleteOptions = {
+        minimumChars: 0,
+        activateOnFocus: true,
+        data: function (term) {
+            term = term.toUpperCase();
+            return _.filter(personae_names, function (value) {
+                return value.toUpperCase().startsWith(term);
+            });
+        }
+    }
+
 });

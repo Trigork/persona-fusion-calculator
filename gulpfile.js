@@ -64,10 +64,13 @@ gulp.task('export-libs', function(){
         'node_modules/angular/angular.min.js',
         'node_modules/angular-route/angular-route.min.js',
         'node_modules/angular-animate/angular-animate.min.js',
+        'node_modules/angular-sanitize/angular-sanitize.min.js',
+        'node_modules/underscore/underscore.min.js',
         'bower_components/jquery/dist/jquery.slim.min.js',
         "bower_components/popper.js/dist/umd/popper.min.js",
         "bower_components/bootstrap/dist/js/bootstrap.min.js",
-        'bower_components/angularUtils-pagination/dirPagination.js'
+        'bower_components/angularUtils-pagination/dirPagination.js',
+        'bower_components/angular-auto-complete/angular-auto-complete.js'
         ])
     .pipe(gulp.dest('dist/html/lib'));
 });
@@ -77,7 +80,8 @@ gulp.task('export-css', function(){
         "css/set1.css",
         "bower_components/animate.css/animate.min.css",
         "bower_components/bootstrap/dist/css/bootstrap.min.css",
-        "bower_components/font-awesome/css/font-awesome.min.css"
+        "bower_components/font-awesome/css/font-awesome.min.css",
+        'bower_components/angular-auto-complete/angular-auto-complete.css'
     ])
     .pipe(gulp.dest('dist/html/css'));
 });

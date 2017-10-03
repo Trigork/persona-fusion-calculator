@@ -176,6 +176,30 @@ ul.pagination li.active a{
   animation: fadeOut 1s;
 }
 
+.pre-fuse-card{
+  text-align: center;
+  margin: 10px;
+  margin-bottom: 5px;
+  padding: 30px;
+  background-color: $highlight-color;
+  border-radius: 3px;
+  color: $background-color;
+}
+
+.fuse-button{
+  text-align: center;
+  padding: 0px 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.fuse-button .btn{
+  width: 80%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #footer{
   padding: 15px;
   font-size: 11pt;
