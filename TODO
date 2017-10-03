@@ -1,12 +1,7 @@
 Functionality:
-  Add possibility of multiple fusion results based on having or not DLCs/Items (List all possibilities)
-  Fix fusions of Zeus x Warrior Zeus (Can't happen)
   Fusion routes shouldn't be case sensitive:
     a) Lowercase Database and present capitalized texts with filters
     b) Index by capitalizing correctly
-
-Styling:
-  Change level drop-downs to horizontal sliders
 
 Build and Automation:
   Make gulp script to create the distributable version:
