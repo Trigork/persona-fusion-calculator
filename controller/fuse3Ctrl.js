@@ -5,9 +5,9 @@ personaFusion
   this.personaeByName = personaeByName;
   this.arcanaRank = arcanaRank;
 
-  this.p1 = {name: "", arcana: "", level: 0};
-  this.p2 = {name: "", arcana: "", level: 0};
-  this.p3 = {name: "", arcana: "", level: 0};
+  this.p1 = {name: "", arcana: "", level: 1};
+  this.p2 = {name: "", arcana: "", level: 1};
+  this.p3 = {name: "", arcana: "", level: 1};
 
   this.range99 = function(min) {
     var range = [];
@@ -158,6 +158,14 @@ var arrayUnique = function(a) {
     }
   }
 
+  this.existPersona = function(p){
+    if (personaeByName[p.name]){
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   this.refreshSlider = function () {
       $timeout(function () {
           $scope.$broadcast('rzSliderForceRender');
@@ -183,16 +191,8 @@ var arrayUnique = function(a) {
     if (this.personaeByName[p.name]){
       return this.personaeByName[p.name].level;
     } else {
-      return 0;
+      return 1;
     }
   }
 
-  this.sliderOptions = {p1: "", p2: "", p3: ""};
-
-  this.sliderOptions.p1 = {
-      options: {
-        floor: this.defaultMinLevel(this.p1),
-        ceil: 99
-      }
-    };
 });

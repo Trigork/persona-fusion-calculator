@@ -7,21 +7,39 @@
   <div class="row">
     <div class="col-md-6">
       <div class="pre-fuse-card">
-        <input type="text" placeholder="Persona Name" ng-model="f2.p1.name" auto-complete="f2.autoCompleteOptions" />
-        <div class="pre-fuse-info">
-            {{ f2.p1.arcana = f2.personaeByName[f2.p1.name].arcana }}
-            /
-            {{ f2.p1.level = f2.personaeByName[f2.p1.name].level }}
+        <h4>Persona 1</h4>
+        <span class="input input--hoshi" id="filter-input-wrapper">
+          <input ng-model="f2.p1.name"
+           auto-complete="f2.autoCompleteOptions" class="input__field input__field--hoshi"
+           type="text" id="filter-input">
+          </input>
+          <label class="input__label input__label--hoshi input__label--hoshi-color-2" for="filter-input">
+            <span class="input__label-content input__label-content--hoshi">Name</span>
+          </label>
+          <i class="fa sort-icon fa-times-circle" id="clear-filter" ng-click="f2.p1.name=''"></i>
+        </span>
+        <div class="pre-fuse-info" ng-show="f2.existPersona(f2.p1)">
+            <p>Level {{ f2.p1.level = f2.personaeByName[f2.p1.name].level }}</p>
+            <p>{{ f2.p1.arcana = f2.personaeByName[f2.p1.name].arcana }}</p>
         </div>
       </div>
     </div>
     <div class="col-md-6">
       <div class="pre-fuse-card">
-        <input type="text" placeholder="Persona Name" ng-model="f2.p2.name" auto-complete="f2.autoCompleteOptions" />
-        <div class="pre-fuse-info">
-            {{ f2.p2.arcana = f2.personaeByName[f2.p2.name].arcana }}
-            /
-            {{ f2.p2.level = f2.personaeByName[f2.p2.name].level }}
+        <h4>Persona 2</h4>
+        <span class="input input--hoshi" id="filter-input-wrapper">
+          <input ng-model="f2.p2.name"
+           auto-complete="f2.autoCompleteOptions" class="input__field input__field--hoshi"
+           type="text" id="filter-input">
+          </input>
+          <label class="input__label input__label--hoshi input__label--hoshi-color-2" for="filter-input">
+            <span class="input__label-content input__label-content--hoshi">Name</span>
+          </label>
+          <i class="fa sort-icon fa-times-circle" id="clear-filter" ng-click="f2.p2.name=''"></i>
+        </span>
+        <div class="pre-fuse-info" ng-show="f2.existPersona(f2.p2)">
+            <p>Level {{ f2.p2.level = f2.personaeByName[f2.p2.name].level }}</p>
+            <p>{{ f2.p2.arcana = f2.personaeByName[f2.p2.name].arcana }}</p>
         </div>
       </div>
     </div>
@@ -30,7 +48,7 @@
       <button type="button" class="btn" ng-click="f2.Fuse()">Fuse!</button>
   </div>
   <div class="container">
-      <span ng-show="f2.result.error != '' ">{{f2.result.error}}</span>
+      <span id="fusion-error" ng-show="f2.result.error != '' ">Something went wrong... {{f2.result.error}}</span>
       <table ng-show="f2.result.error == '' && f2.result.personae.length > 0" width="100%" id="list" class='table table-striped borderless'>
           <thead>
               <tr>
@@ -41,7 +59,12 @@
           </thead>
           <tr class="persona-item" ng-click="goPersona(res_persona)" ng-repeat="res_persona in f2.result.personae">
             <td>{{res_persona.arcana | uppercase }}</td>
-            <td>{{res_persona.name}}</td>
+            <td>
+              {{res_persona.name}}
+              <i class="fa fa-key" ng-show="{{res_persona.item}}" title="This persona requires an item to summon" aria-hidden="true"></i>
+              <i class="fa fa-star" ng-show="{{res_persona.special}}" title="This persona requires a special fusion" aria-hidden="true"></i>
+              <i class="fa fa-arrow-circle-down" ng-show="{{res_persona.dlc}}" title="This persona is only available through DLC" aria-hidden="true"></i>
+            </td>
             <td>{{res_persona.level}}</td>
           </tr>
       </table>

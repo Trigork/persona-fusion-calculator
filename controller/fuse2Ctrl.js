@@ -39,34 +39,40 @@ personaFusion
       var bbb_ = [p1.arcana, p2.arcana].sort();
       var bbb = $filter('filter')(arcana2Combos, function(x) {var ccc = x.source; ccc.sort(); return angular.equals(ccc, bbb_);});
       if (bbb.length) {
-        var arcana = bbb[0].result;
-	var personae = personaeByArcana[arcana];
+           var arcana = bbb[0].result;
+	         var personae = personaeByArcana[arcana];
 
-        for (var i = 0, persona = null; persona = personae[i]; i++) {
-          if (persona.level > level) {
-	           if (persona.special) continue;
-             break;
-          }
-        }
+            for (var i = 0, persona = null; persona = personae[i]; i++) {
+              if (persona.level > level) {
+    	           if (persona.special) continue;
+                 break;
+              }
+            }
 
-	if (i >= personae.length) {
-	  i = personae.length - 1;
-	}
-        if (p1.arcana == p2.arcana) {
-          i--;
-        }
-	while ( i >= 0 && (personae[i].special || personae[i] == p1 || personae[i] == p2)) i--;
+          	if (i >= personae.length) {
+          	  i = personae.length - 1;
+          	}
+                  if (p1.arcana == p2.arcana) {
+                    i--;
+                  }
+          	while ( i >= 0 && (personae[i].special || personae[i] == p1 || personae[i] == p2)) i--;
 
-	if (i < 0) {
-	  this.result.error = personae[0].name + ' is the first Persona of the ' + arcana + ' Arcana';
-	  return 0;
-	}
-	this.result.personae.push(personae[i]);
-	return 0;
-      }
-      else {
+          	if (i < 0) {
+          	  this.result.error = personae[0].name + ' is the first Persona of the ' + arcana + ' Arcana';
+          	  return 0;
+          	}
+          	this.result.personae.push(personae[i]);
+            if (personae[i].dlc || personae[i].item){
+              if(p1.arcana == p2.arcana){
+                this.result.personae.push(personae[i-1]);
+              } else {
+                this.result.personae.push(personae[i+1]);
+              }
+            }
+          	return 0;
+      } else {
         this.result.error = "Invalid Arcana combination."
-	return 0;
+	       return 0;
       }
     }
   }
@@ -88,5 +94,14 @@ personaFusion
             });
         }
     }
+
+
+  this.existPersona = function(p){
+    if (personaeByName[p.name]){
+      return true;
+    } else {
+      return false;
+    }
+  }
 
 });

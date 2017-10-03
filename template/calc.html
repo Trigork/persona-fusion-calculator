@@ -33,6 +33,9 @@
               <td>{{recipe.cost | number}} ¥</td>
               <td ng-repeat="persona in recipe.sources">
                 <a href="#!/persona/{{persona.name}}">{{persona.name}}</a>
+                <i class="fa fa-key" ng-show="{{persona.item}}" title="This persona requires an item to summon" aria-hidden="true"></i>
+                <i class="fa fa-star" ng-show="{{persona.special}}" title="This persona requires a special fusion" aria-hidden="true"></i>
+                <i class="fa fa-arrow-circle-down" ng-show="{{persona.dlc}}" title="This persona is only available through DLC" aria-hidden="true"></i>
               </td>
             </tr>
           </tbody>

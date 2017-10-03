@@ -22,6 +22,7 @@
     "tether": "^1.4.0",
     "angularUtils-pagination": "angular-utils-pagination#^0.11.1",
     "animate.css": "^3.5.2",
-    "angular-auto-complete": "^1.4.2"
+    "angular-auto-complete": "^1.4.2",
+    "angularjs-slider": "^6.4.0"
   }
 }

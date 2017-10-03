@@ -20,9 +20,11 @@
         </span>
         <div class="pre-fuse-info">
             <div>
-                <rzslider rz-slider-model="f3.p1.level"  rz-slider-options="{floor: f3.defaultMinLevel(f3.p1), ceil: 99}"></rzslider>
+                <rzslider class="custom-slider" rz-slider-model="f3.p1.level"
+                    rz-slider-options="{floor: f3.defaultMinLevel(f3.p1), ceil: 99}">
+                </rzslider>
             </div>
-            {{ f3.p1.arcana = f3.personaeByName[f3.p1.name].arcana }}
+            <p>{{ f3.p1.arcana = f3.personaeByName[f3.p1.name].arcana }}</p>
         </div>
       </div>
     </div>
@@ -41,9 +43,11 @@
         </span>
         <div class="pre-fuse-info">
             <div>
-                <rzslider rz-slider-model="f3.p2.level"  rz-slider-options="{floor: f3.defaultMinLevel(f3.p2), ceil: 99}"></rzslider>
+                <rzslider class="custom-slider" rz-slider-model="f3.p2.level"
+                    rz-slider-options="{floor: f3.defaultMinLevel(f3.p2), ceil: 99}">
+                </rzslider>
             </div>
-            {{ f3.p2.arcana = f3.personaeByName[f3.p2.name].arcana }}
+            <p>{{ f3.p2.arcana = f3.personaeByName[f3.p2.name].arcana }}</p>
         </div>
       </div>
     </div>
@@ -62,9 +66,11 @@
         </span>
         <div class="pre-fuse-info">
             <div>
-                <rzslider rz-slider-model="f3.p3.level"  rz-slider-options="{floor: f3.defaultMinLevel(f3.p3), ceil: 99}"></rzslider>
+                <rzslider class="custom-slider" rz-slider-model="f3.p3.level"
+                  rz-slider-options="{floor: f3.defaultMinLevel(f3.p3), ceil: 99}">
+                </rzslider>
             </div>
-            {{ f3.p3.arcana = f3.personaeByName[f3.p3.name].arcana }}
+            <p>{{ f3.p3.arcana = f3.personaeByName[f3.p3.name].arcana }}</p>
         </div>
       </div>
     </div>
@@ -73,7 +79,7 @@
       <button type="button" class="btn" ng-click="f3.Fuse3()">Fuse!</button>
   </div>
   <div class="container">
-      <span ng-show="f3.result.error != '' ">{{f3.result.error}}</span>
+      <span id="fusion-error" ng-show="f3.result.error != '' ">Something went wrong... {{f3.result.error}}</span>
       <table ng-show="f3.result.error == '' && f3.result.personae.length > 0" width="100%" id="list" class='table table-striped borderless'>
           <thead>
               <tr>
@@ -84,7 +90,12 @@
           </thead>
           <tr class="persona-item" ng-click="goPersona(res_persona)" ng-repeat="res_persona in f3.result.personae">
             <td>{{res_persona.arcana | uppercase }}</td>
-            <td>{{res_persona.name}}</td>
+            <td>
+              {{res_persona.name}}
+              <i class="fa fa-key" ng-show="{{res_persona.item}}" title="This persona requires an item to summon" aria-hidden="true"></i>
+              <i class="fa fa-star" ng-show="{{res_persona.special}}" title="This persona requires a special fusion" aria-hidden="true"></i>
+              <i class="fa fa-arrow-circle-down" ng-show="{{res_persona.dlc}}" title="This persona is only available through DLC" aria-hidden="true"></i>
+            </td>
             <td>{{res_persona.level}}</td>
           </tr>
       </table>

@@ -35,7 +35,12 @@
         </thead>
         <tr class="persona-item" ng-click="goPersona(persona)" dir-paginate="persona in pList.personae | orderBy:sortKey:reverse | filter: pList.filter | itemsPerPage: 15">
           <td>{{persona.arcana | uppercase }}</td>
-          <td>{{persona.name}}</td>
+          <td>
+            {{persona.name}}
+            <i class="fa fa-key" ng-show="{{persona.item}}" title="This persona requires an item to summon" aria-hidden="true"></i>
+            <i class="fa fa-star" ng-show="{{persona.special}}" title="This persona requires a special fusion" aria-hidden="true"></i>
+            <i class="fa fa-arrow-circle-down" ng-show="{{persona.dlc}}" title="This persona is only available through DLC" aria-hidden="true"></i>
+          </td>
           <td>{{persona.level}}</td>
         </tr>
     </table>
