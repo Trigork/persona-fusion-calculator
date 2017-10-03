@@ -65,7 +65,7 @@ gulp.task('export-libs', function(){
         'node_modules/angular-route/angular-route.min.js',
         'node_modules/angular-animate/angular-animate.min.js',
         'node_modules/angular-sanitize/angular-sanitize.min.js',
-        'node_modules/underscore/underscore.min.js',
+        'js/underscore.min.js',
         'bower_components/jquery/dist/jquery.slim.min.js',
         "bower_components/popper.js/dist/umd/popper.min.js",
         "bower_components/bootstrap/dist/js/bootstrap.min.js",
@@ -105,7 +105,7 @@ gulp.task('build-index', function(){
         }
     }))
     .pipe(replace(
-      /bower_components\/.*\/(.*\.min\.css)/g, 'css/$1'
+      /bower_components\/.*\/(.*\.css)/g, 'css/$1'
     ))
     .pipe(replace(
       /js\/(.*\.js)/g, 'lib/$1'
