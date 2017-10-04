@@ -29,7 +29,7 @@
             <th colspan="3">Ingredients</th>
           </thead>
           <tbody>
-            <tr dir-paginate="recipe in recipes | filter: pCalc.filter | itemsPerPage:15">
+            <tr dir-paginate="recipe in allRecipes | filter: pCalc.filter | itemsPerPage:15">
               <td class='recipe-cost'>{{recipe.cost | number}} ¥</td>
               <td class='recipe-persona' ng-repeat="persona in recipe.sources">
                 <a ng-show="persona.level > 0" href="#!/persona/{{persona.name}}">

@@ -42,33 +42,46 @@ personaFusion
            var arcana = bbb[0].result;
 	         var personae = personaeByArcana[arcana];
 
-            for (var i = 0, persona = null; persona = personae[i]; i++) {
-              if (persona.level > level) {
-    	           if (persona.special) continue;
-                 break;
+            if (p1.arcana == p2.arcana) {
+
+              for (var i = personae.length -1, persona = null; persona = personae[i]; i--) {
+                if (persona.level <= level) {
+                   if (persona.special) continue;
+                   break;
+                }
               }
+
+            } else {
+
+              for (var i = 0, persona = null; persona = personae[i]; i++) {
+                if (persona.level > level) {
+                   if (persona.special) continue;
+                   break;
+                }
+              }
+
             }
+
 
           	if (i >= personae.length) {
           	  i = personae.length - 1;
           	}
-                  if (p1.arcana == p2.arcana) {
-                    i--;
-                  }
-          	while ( i >= 0 && (personae[i].special || personae[i] == p1 || personae[i] == p2)) i--;
 
-          	if (i < 0) {
-          	  this.result.error = personae[0].name + ' is the first Persona of the ' + arcana + ' Arcana';
-          	  return 0;
-          	}
-          	this.result.personae.push(personae[i]);
-            if (personae[i].dlc || personae[i].item){
-              if(p1.arcana == p2.arcana){
-                this.result.personae.push(personae[i-1]);
-              } else {
-                this.result.personae.push(personae[i+1]);
-              }
+            while ( i >= 0 && (personae[i].special || personae[i] == p1 || personae[i] == p2)) i--;
+
+             if (i < 0) {
+               this.result.error = p1.name + ' and ' + p2.name + ' cannot be ranked-down';
+               return 0;
+             }
+
+           this.result.personae.push(personae[i]);
+           var pushedi = i;
+           while ( i >= 0 && (personae[i].item || personae[i].dlc)) i--;
+           
+            if (i!= pushedi){
+              this.result.personae.push(personae[i]);
             }
+
           	return 0;
       } else {
         this.result.error = "Invalid Arcana combination."

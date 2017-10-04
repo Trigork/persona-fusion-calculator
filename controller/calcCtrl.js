@@ -7,7 +7,7 @@ personaFusion
 
   $scope.filter = "";
 
-  vm.persona_name = $routeParams.persona_name;
+  this.persona_name = $routeParams.persona_name;
 
   this.getRank = function(persona){
       return arcanaRank[persona.arcana];
@@ -34,19 +34,31 @@ personaFusion
     var level = Math.floor((persona1.level + persona2.level) / 2);
     var personae = personaeByArcana[arcana];
 
-    for (var i = 0, persona = null; persona = personae[i]; i++) {
-      if (persona.level > level) {
-        if (persona.special) continue;
-        break;
+    if (persona1.arcana == persona2.arcana) {
+
+      for (var i = personae.length-1, persona = null; persona = personae[i]; i--) {
+        if (persona.level <= level) {
+          if (persona.special) continue;
+          break;
+        }
       }
+
+    } else {
+
+      for (var i = 0, persona = null; persona = personae[i]; i++) {
+        if (persona.level > level) {
+           if (persona.special) continue;
+           break;
+        }
+      }
+
     }
 
-    if (persona1.arcana == persona2.arcana) {
-      i--;
+    if (i >= personae.length) {
+      i = personae.length - 1;
     }
-    if (personae[i] == persona1 || personae[i] == persona2) {
-      i--;
-    }
+
+    while ( i >= 0 && (personae[i].special || personae[i] == persona1 || personae[i] == persona2)) i--;
 
     return personae[i];
   }
@@ -169,6 +181,12 @@ personaFusion
         for (var k = 0, persona2 = null; persona2 = personae2[k]; k++) {
           if (persona1.arcana == persona2.arcana && k <= j) continue;
           var result = this.fuse2(combo.result, persona1, persona2);
+          // if (result && (persona1.arcana == persona2.arcana) && arcanaName == "Fool") {
+          //   // console.log(result.name + ": " + persona1.name + " + " + persona2.name);
+          //   // console.log(persona1.name + "==" + this.persona.name + " ret true");
+          //   // console.log(persona2.name + "==" + this.persona.name + " ret true");
+          //   // console.log(result.name + "==" + this.persona.name + " ret false");
+          // }
           if (!result) continue;
           if (filterCallback
               && filterCallback.call(this, persona1, persona2, result)) {

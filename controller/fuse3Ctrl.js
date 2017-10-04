@@ -49,9 +49,7 @@ personaFusion
 	if (i >= personae.length) {
 	  i = personae.length - 1;
 	}
-        //if (p1.arcana == p2.arcana) {
-          //i--;
-        //}
+
 	while ( i >= 0 && (personae[i].special || personae[i] == p1 || personae[i] == p2)) i--;
 
 	if (i < 0) {
@@ -63,10 +61,12 @@ personaFusion
       }
       else {
         this.result.error = "Invalid Arcana combination.";
-	return 0;
+	       return 0;
       }
     }
   }
+
+
 var arrayUnique = function(a) {
     return a.reduce(function(p, c) {
         if (p.indexOf(c) < 0) p.push(c);

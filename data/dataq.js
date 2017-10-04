@@ -689,7 +689,8 @@ const arcana3Combos = [
     {'source': ['Judgement',  'Tower',      ], 'result': 'Fortune'     },
     {'source': ['Judgement',  'Star',       ], 'result': 'Hanged Man'  },
     {'source': ['Judgement',  'Moon',       ], 'result': 'Priestess'   },
-    {'source': ['Judgement',  'Sun',        ], 'result': 'Lovers'      }
+    {'source': ['Judgement',  'Sun',        ], 'result': 'Lovers'      },
+    {'source': ['Judgement',  'Judgement',  ], 'result': 'Judgement'   }
 
     ];
 
