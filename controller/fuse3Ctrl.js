@@ -105,6 +105,10 @@ var arrayUnique = function(a) {
         /* I feel cheated. DoubleJump guide lied to me. The level is NOT calculated by the CURRENT level of the ingredients, but the game uses the DEFAULT level. Example: Scathach Lv99 + Pixie Lv2 + Orobas Lv 9 should fusion into Clotho, instead I get Fortuna.  */
         //var level = Math.floor( (p[0].level + p[1].level + p[2].level) / 3 );
         var level = 5 + Math.floor( (personaeByName[p[0].name].level + personaeByName[p[1].name].level + personaeByName[p[2].name].level) / 3 );
+        if(personaeByName[p[0].name].arcana == personaeByName[p[1].name].arcana && personaeByName[p[1].name].arcana == personaeByName[p[2].name].arcana){
+          level -= 5;
+        }
+        console.log(level);
         var arcana = ddd[0].result;
         var personae = personaeByArcana[arcana];
 

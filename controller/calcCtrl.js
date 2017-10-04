@@ -66,6 +66,9 @@ personaFusion
   this.fuse3 = function(arcana, persona1, persona2, persona3) {
     var level = 5 + Math.floor(
       (persona1.level + persona2.level + persona3.level) / 3);
+    if (persona1.arcana == persona2.arcana && persona2.arcana == persona3.arcana){
+      level -= 5;
+    }
     var personae = personaeByArcana[arcana];
 
     var found = false;
@@ -92,8 +95,6 @@ personaFusion
 
     return personae[i];
   }
-
-  console.log(this.fuse3("Fool", personaeByName["Shiki-Ouji"], personaeByName["Decarabia"], personaeByName["Slime"] ))
 
   this.getRecipes = function() {
     var recipes = [];
