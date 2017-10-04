@@ -30,62 +30,75 @@ a, a:visited, a:active, a:hover{
 
 table{
   margin-bottom: 0px !important;
-}
 
-table.borderless, table.borderless th, table.borderless td{
-  border: 0px !important;
-}
+  &.borderless, &.borderless th, &.borderless td{
+    border: 0px !important;
+  }
 
-.table-striped tbody tr:nth-of-type(odd) {
-    background-color: rgba(0,0,0,.4);
-}
+  &.table-striped tbody tr:nth-of-type(odd) {
+      background-color: rgba(0,0,0,.4);
+  }
 
-.table-striped tbody tr:hover {
-    cursor: pointer;
-    background-color: rgba(255,255,255,.1);
-}
-
-#recipes.table-striped tbody tr:hover {
-    cursor: default;
-    background-color: rgba(255,255,255,.1);
-}
-
-.nav-pills .nav-link{
-  padding: .5rem .6rem;
-}
-
-.nav-pills .nav-link.active{
-  background-color: $highlight-color;
-  color: $background-color;
-  font-weight: bold;
+  &.table-striped tbody tr:hover {
+      cursor: pointer;
+      background-color: rgba(255,255,255,.1);
+  }
 }
 
 
+#recipes{
 
-/* Custom page header */
+  &.table-striped tbody tr:hover {
+      cursor: default;
+      background-color: rgba(255,255,255,.1);
+  }
+}
+
+.nav-pills{
+
+  & .nav-link{
+    padding: .5rem .6rem;
+
+    &.active{
+      background-color: $highlight-color;
+      color: $background-color;
+      font-weight: bold;
+    }
+
+  }
+
+}
+
 .header {
   padding-bottom: 1rem;
-}
-/* Make the masthead heading the same height as the navigation */
-.header h2 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 3rem;
-  color: $primary-color;
-  margin-left: 15px;
+
+  & h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 3rem;
+    color: $primary-color;
+    margin-left: 15px;
+  }
+
 }
 
-.container#app-wrapper{
-  padding: 0px;
-}
+.container{
 
-.container#main-wrapper{
-  border-radius: 5px;
-  background-color: $highlight-color;
-}
+  &#app-wrapper{
+    padding: 0px;
+    position: relative;
+  }
 
-.container#main-wrapper #title{
-  font-family: 'Vollkorn', serif;
+  &#main-wrapper{
+    border-radius: 5px;
+    background-color: $highlight-color;
+
+    &#main-wrapper #title{
+      font-family: 'Vollkorn', serif;
+    }
+
+  }
+
 }
 
 #title-row{
@@ -103,6 +116,11 @@ table.borderless, table.borderless th, table.borderless td{
   margin: 0px;
   margin-right: 10px;
   position: relative;
+
+  & input.ng-not-empty ~ #clear-filter{
+    display: block;
+  }
+
 }
 
 #clear-filter{
@@ -113,67 +131,77 @@ table.borderless, table.borderless th, table.borderless td{
   display: none;
 }
 
-#filter-input-wrapper input.ng-not-empty ~ #clear-filter{
-  display: block;
-}
+ul {
 
-ul.pagination{
-  margin-bottom: 0px;
-  display: flex;
-  padding: 15px;
-}
+  &.pagination{
+    margin-bottom: 0px;
+    display: flex;
+    padding: 15px;
 
-ul.pagination li{
-  flex-grow: 1;
-  display: inline-block;
-  text-align: center;
-  font-size: 13pt;
-}
+    & li {
+      flex-grow: 1;
+      display: inline-block;
+      text-align: center;
+      font-size: 13pt;
 
-ul.pagination li a{
-  line-height: 2;
-  display: block;
-  border: 1px solid #444;
-  background-color: #333;
-  text-align: center;
-  height: 40px;
-}
+      & a{
 
-ul.pagination li:nth-child(1) a{
-  border-radius: 20px 0px 0px 20px;
-}
+        line-height: 2;
+        display: block;
+        border: 1px solid #444;
+        background-color: #333;
+        text-align: center;
+        height: 40px;
 
-ul.pagination li:last-child a{
-  border-radius: 0px 20px 20px 0px;
-}
+        &:active, &:hover{
+          text-decoration: none;
+        }
+      }
 
-ul.pagination li a:active,
-ul.pagination li a:hover,
-{
-  text-decoration: none;
-}
+      &:nth-child(1) a{
+        border-radius: 20px 0px 0px 20px;
+      }
 
-ul.pagination li.active a{
-  color: $background-color;
-  border-color: $bright-color;
-  background-color: $bright-color;
-  font-weight: bold;
-}
+      &:last-child a{
+        border-radius: 0px 20px 20px 0px;
+      }
 
+      &.active a{
+        color: $background-color;
+        border-color: $bright-color;
+        background-color: $bright-color;
+        font-weight: bold;
+      }
+    }
+  }
+}
 
 .container#details-wrapper{
   border-radius: 5px;
   background-color: $background-color;
   color: $primary-color;
   padding: 0px;
-}
 
-.container#details-wrapper.ng-enter {
-  animation: fadeIn 1s;
-}
+  &.ng-animate{
+    transition: all ease 0.4s;
+    position: absolute;
+  }
 
-.container#details-wrapper.ng-leave {
-  animation: fadeOut 1s;
+  &.ng-enter {
+    top: 200px;
+    opacity: 0;
+  }
+
+  &.ng-leave,
+  &.ng-enter.ng-enter-active {
+    top: 0;
+    opacity: 1;
+  }
+
+  &.ng-leave.ng-leave-active {
+    top: -200px;
+    opacity: 0;
+  }
 }
 
 .pre-fuse-card{
@@ -185,51 +213,57 @@ ul.pagination li.active a{
   background-color: $highlight-color;
   border-radius: 3px;
   color: $background-color;
+
+  & h4{
+    margin-bottom: 0px;
+  }
+
+  & #filter-input-wrapper{
+    width: 100%;
+  }
+
+  & p{
+    margin-top: 1rem;
+    margin-bottom: 0px;
+    font-weight: bold;
+  }
 }
 
-.pre-fuse-card h4{
-  margin-bottom: 0px;
-}
+.custom-slider{
 
-.pre-fuse-card #filter-input-wrapper{
-  width: 100%;
-}
+  &.rzslider{
+    & .rz-bar {
+      background: $bright-color;
+    }
 
-.pre-fuse-card p{
-  margin-top: 1rem;
-  margin-bottom: 0px;
-  font-weight: bold;
-}
+    & .rz-selection {
 
-.custom-slider.rzslider .rz-bar {
-  background: $bright-color;
-}
-.custom-slider.rzslider .rz-selection {
+    }
 
-}
+    & .rz-pointer {
+      width:20px;
+      height: 20px;
+      width: 20px;
+      top: -9px;
+      height: 20px;
+      background-color: $bright-color;
 
-.custom-slider.rzslider .rz-pointer {
-  width:20px;
-  height: 20px;
-  width: 20px;
-  top: -9px;
-  height: 20px;
-  background-color: $bright-color;
-}
+      &:after{
+        width:15px;
+        height: 15px;
+        border-radius: 15px;
+        width: 10px;
+        height: 10px;
+        left: 5px;
+        top: 5px;
+        background-color: $highlight-color;
+      }
+    }
 
-.custom-slider.rzslider .rz-pointer:after {
-  width:15px;
-  height: 15px;
-  border-radius: 15px;
-  width: 10px;
-  height: 10px;
-  left: 5px;
-  top: 5px;
-  background-color: $highlight-color;
-}
-
-.custom-slider.rzslider .rz-bubble {
-  font-weight: bold;
+    & .rz-bubble {
+      font-weight: bold;
+    }
+  }
 }
 
 .fuse-button{
@@ -237,17 +271,17 @@ ul.pagination li.active a{
   padding: 0px 25px;
   margin-top: 10px;
   padding-bottom: 10px;
-}
 
-.fuse-button .btn{
-  cursor: pointer;
-  width: 80%;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  color: $primary-color;
-  font-weight: bold;
-  background-color: #3c23b4;
+  & .btn{
+    cursor: pointer;
+    width: 80%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    color: $primary-color;
+    font-weight: bold;
+    background-color: #3c23b4;
+  }
 }
 
 #fusion-error{
@@ -258,25 +292,29 @@ ul.pagination li.active a{
   font-weight: bold;
 }
 
-#recipes td{
-  vertical-align: middle;
-}
+#recipes {
 
-.recipe-persona a, .recipe-persona i{
-  display: inline-block;
-  vertical-align: middle;
-}
+  & td{
+    vertical-align: middle;
+  }
 
-.recipe-persona i{
-  margin-left: 10px;
-}
+  & .recipe-persona a,
+  & .recipe-persona i{
+    display: inline-block;
+    vertical-align: middle;
+  }
 
-.recipe-persona-name{
-  display: block;
-}
+  & i{
+    margin-left: 10px;
+  }
 
-.recipe-persona-info{
-  font-size: 10pt;
+  & .recipe-persona-name{
+    display: block;
+  }
+
+  & .recipe-persona-info{
+    font-size: 10pt;
+  }
 }
 
 #footer{
@@ -284,8 +322,8 @@ ul.pagination li.active a{
   font-size: 11pt;
   font-style: italic;
   text-align: center;
-}
 
-#footer a{
-  color: darken($bright-color, 40%);
+  & a{
+    color: darken($bright-color, 40%);
+  }
 }
