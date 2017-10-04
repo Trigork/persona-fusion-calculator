@@ -209,7 +209,7 @@ const personae = [
     {'arcana': 'Judgement',   'level': 87, 'name': 'Warrior Zeus',      'item': 'Blessed Loincloth', 'itemreq': 'Time for the Finale'},
     {'arcana': 'Judgement',   'level': 89, 'name': 'Ardha',             'special': true },
     {'arcana': 'Judgement',   'level': 91, 'name': 'Zeus',              'special': true },
-    {'arcana': 'Judgement',   'level': 93, 'name': 'Lucifer',           'special': true }
+    {'arcana': 'Judgement',   'level': 93, 'name': 'Lucifer',           },
 
     ];
 
@@ -706,7 +706,5 @@ const specialCombos = [
     {'result': 'Shiva', 'sources': ['Rangda', 'Barong']},
     {'result': 'Michael', 'sources': ['Uriel', 'Raphael', 'Gabriel']},
     {'result': 'Zeus', 'sources': ['Warrior Zeus', 'Seth']},
-    {'result': 'Ardha', 'sources': ['Parvati', 'Shiva']},
-    {'result': 'Lucifer', 'sources': ['Metatron', 'Ardha', 'Zeus']},
-    {'result': 'Lucifer', 'sources': ['Metatron', 'Ardha', 'Warrior Zeus']}
+    {'result': 'Ardha', 'sources': ['Parvati', 'Shiva']}
     ];
