@@ -17,9 +17,9 @@
     <span class="persona-info text-center" ng-hide="pCalc.persona">There's no {{pCalc.persona_name}} Persona in this game. Please check your spelling or contact the developer!</span>
     <div ng-show="pCalc.persona">
         <div class="caption text-center">
-          <span class="persona-info" ng-show='pCalc.persona.item'></br>Requires "{{pCalc.persona.item}}" from Elizabeth's request "{{pCalc.persona.itemreq}}" to summon.</span>
-          <span class="persona-info" ng-show='pCalc.persona.dlc'></br>This is a DLC Persona, it must be downloaded and Summoned First.</span>
-          <span class="persona-info" ng-show='pCalc.persona.special'></br>This is a Special Fusion, therefore there's only one way to summon it.</span>
+          <span class="persona-info" ng-show='{{pCalc.persona.item}}'>Requires "{{pCalc.persona.itemname}}" from Elizabeth's request "{{pCalc.persona.itemreq}}" to summon.</span>
+          <span class="persona-info" ng-show='{{pCalc.persona.dlc}}'>This is a DLC Persona, it must be downloaded and Summoned First.</span>
+          <span class="persona-info" ng-show='{{pCalc.persona.special}}'>This is a Special Fusion, therefore there's only one way to summon it.</span>
         </div>
         <dir-pagination-controls max-size="6" direction-links="true">
         </dir-pagination-controls>

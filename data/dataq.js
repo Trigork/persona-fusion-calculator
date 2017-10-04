@@ -113,7 +113,7 @@ const personae = [
     {'arcana': 'Strength',    'level': 17, 'name': 'Oni',               },
     {'arcana': 'Strength',    'level': 34, 'name': 'Rakshasa',          },
     {'arcana': 'Strength',    'level': 41, 'name': 'Hanuman',           },
-    {'arcana': 'Strength',    'level': 53, 'name': 'Ouyamatsumi',       'item': 'Amenotamu-zake', 'itemreq': 'Time for a Trial'},
+    {'arcana': 'Strength',    'level': 53, 'name': 'Ouyamatsumi',       'item': true, 'itemname': "Amenotamu-zake", 'itemreq': 'Time for a Trial'},
     {'arcana': 'Strength',    'level': 58, 'name': 'Siegfried',         },
     {'arcana': 'Strength',    'level': 63, 'name': 'Kali',              },
     {'arcana': 'Strength',    'level': 80, 'name': 'Zaou-Gongen',       },
@@ -129,7 +129,7 @@ const personae = [
 
     {'arcana': 'Death',       'level': 6,  'name': 'Mokoi',             },
     {'arcana': 'Death',       'level': 22, 'name': 'Matador',           },
-    {'arcana': 'Death',       'level': 27, 'name': 'Turdak',            'item': 'Scarlet Brace', 'itemreq': 'Time for a Warm-up'},
+    {'arcana': 'Death',       'level': 27, 'name': 'Turdak',            'item': true, 'itemname': "Scarlet Brace", 'itemreq': 'Time for a Warm-up'},
     {'arcana': 'Death',       'level': 33, 'name': 'White Rider',       },
     {'arcana': 'Death',       'level': 38, 'name': 'Samael',            },
     {'arcana': 'Death',       'level': 47, 'name': 'Mot',               },
@@ -151,7 +151,7 @@ const personae = [
     {'arcana': 'Devil',       'level': 13, 'name': 'Incubus',           },
     {'arcana': 'Devil',       'level': 29, 'name': 'Succubus',          },
     {'arcana': 'Devil',       'level': 34, 'name': 'Pazuzu',            },
-    {'arcana': 'Devil',       'level': 39, 'name': 'Basilisk',          'item': 'Rock Dragon Wing', 'itemreq': 'Time to Test Your Skills'},
+    {'arcana': 'Devil',       'level': 39, 'name': 'Basilisk',          'item': true, 'itemname': "Rock Dragon Wing", 'itemreq': 'Time to Test Your Skills'},
     {'arcana': 'Devil',       'level': 44, 'name': 'Lilith',            },
     {'arcana': 'Devil',       'level': 51, 'name': 'Belial',            },
     {'arcana': 'Devil',       'level': 63, 'name': 'Belphegor',         },
@@ -206,7 +206,7 @@ const personae = [
     {'arcana': 'Judgement',   'level': 71, 'name': 'Michael',           'special': true },
     {'arcana': 'Judgement',   'level': 77, 'name': 'Satan',             },
     {'arcana': 'Judgement',   'level': 82, 'name': 'Metatron',          },
-    {'arcana': 'Judgement',   'level': 87, 'name': 'Warrior Zeus',      'item': 'Blessed Loincloth', 'itemreq': 'Time for the Finale'},
+    {'arcana': 'Judgement',   'level': 87, 'name': 'Warrior Zeus',      'item': true, 'itemname': "Blessed Loincloth", 'itemreq': 'Time for the Finale'},
     {'arcana': 'Judgement',   'level': 89, 'name': 'Ardha',             'special': true },
     {'arcana': 'Judgement',   'level': 91, 'name': 'Zeus',              'special': true },
     {'arcana': 'Judgement',   'level': 93, 'name': 'Lucifer',           },
@@ -465,25 +465,32 @@ const arcana2Combos = [
     ];
 
 const arcana3Combos = [
+    {'source': ['Fool',   'Fool',       ], 'result': 'Fool'     },
+
     {'source': ['Magician',   'Fool',       ], 'result': 'Chariot'     },
+    {'source': ['Magician',   'Magician',       ], 'result': 'Magician'     },
 
     {'source': ['Priestess',  'Fool',       ], 'result': 'Sun'         },
     {'source': ['Priestess',  'Magician',   ], 'result': 'Justice'     },
+    {'source': ['Priestess',  'Priestess',   ], 'result': 'Priestess'     },
 
     {'source': ['Empress',    'Fool',       ], 'result': 'Magician'    },
     {'source': ['Empress',    'Magician',   ], 'result': 'Hermit'      },
     {'source': ['Empress',    'Priestess',  ], 'result': 'Justice'     },
+    {'source': ['Empress',    'Empress',  ], 'result': 'Empress'     },
 
     {'source': ['Emperor',    'Fool',       ], 'result': 'Star'        },
     {'source': ['Emperor',    'Magician',   ], 'result': 'Moon'        },
     {'source': ['Emperor',    'Priestess',  ], 'result': 'Empress'     },
     {'source': ['Emperor',    'Empress',    ], 'result': 'Hanged Man'      },
+    {'source': ['Emperor',    'Emperor',    ], 'result': 'Emperor'      },
 
     {'source': ['Hierophant', 'Fool',       ], 'result': 'Judgement'   },
     {'source': ['Hierophant', 'Magician',   ], 'result': 'Fortune'     },
     {'source': ['Hierophant', 'Priestess',  ], 'result': 'Death'       },
     {'source': ['Hierophant', 'Empress',    ], 'result': 'Tower'       },
     {'source': ['Hierophant', 'Emperor',    ], 'result': 'Lovers'      },
+    {'source': ['Hierophant', 'Hierophant',    ], 'result': 'Hierophant'      },
 
     {'source': ['Lovers',     'Fool',       ], 'result': 'Emperor'     },
     {'source': ['Lovers',     'Magician',   ], 'result': 'Chariot'     },
@@ -491,6 +498,7 @@ const arcana3Combos = [
     {'source': ['Lovers',     'Empress',    ], 'result': 'Temperance'  },
     {'source': ['Lovers',     'Emperor',    ], 'result': 'Devil'       },
     {'source': ['Lovers',     'Hierophant', ], 'result': 'Moon'        },
+    {'source': ['Lovers',     'Lovers', ], 'result': 'Lovers'        },
 
     {'source': ['Chariot',    'Fool',       ], 'result': 'Sun'         },
     {'source': ['Chariot',    'Magician',   ], 'result': 'Sun'         },
@@ -499,6 +507,7 @@ const arcana3Combos = [
     {'source': ['Chariot',    'Emperor',    ], 'result': 'Hermit'      },
     {'source': ['Chariot',    'Hierophant', ], 'result': 'Hanged Man'  },
     {'source': ['Chariot',    'Lovers',     ], 'result': 'Hierophant'  },
+    {'source': ['Chariot',    'Chariot',     ], 'result': 'Chariot'  },
 
     {'source': ['Justice',    'Fool',       ], 'result': 'Hermit'      },
     {'source': ['Justice',    'Magician',   ], 'result': 'Fool'        },
@@ -508,6 +517,7 @@ const arcana3Combos = [
     {'source': ['Justice',    'Hierophant', ], 'result': 'Sun'         },
     {'source': ['Justice',    'Lovers',     ], 'result': 'Judgement'   },
     {'source': ['Justice',    'Chariot',    ], 'result': 'Fool'        },
+    {'source': ['Justice',    'Justice',    ], 'result': 'Justice'        },
 
     {'source': ['Hermit',     'Fool',       ], 'result': 'Lovers'      },
     {'source': ['Hermit',     'Magician',   ], 'result': 'Strength'    },
@@ -518,6 +528,7 @@ const arcana3Combos = [
     {'source': ['Hermit',     'Lovers',     ], 'result': 'Hanged Man'  },
     {'source': ['Hermit',     'Chariot',    ], 'result': 'Emperor'     },
     {'source': ['Hermit',     'Justice',    ], 'result': 'Strength'    },
+    {'source': ['Hermit',     'Hermit',    ], 'result': 'Hermit'    },
 
     {'source': ['Fortune',    'Fool',       ], 'result': 'Emperor'     },
     {'source': ['Fortune',    'Magician',   ], 'result': 'Hanged Man'  },
@@ -529,6 +540,7 @@ const arcana3Combos = [
     {'source': ['Fortune',    'Chariot',    ], 'result': 'Lovers'      },
     {'source': ['Fortune',    'Justice',    ], 'result': 'Priestess'   },
     {'source': ['Fortune',    'Hermit',     ], 'result': 'Hanged Man'  },
+    {'source': ['Fortune',    'Fortune',     ], 'result': 'Fortune'  },
 
     {'source': ['Strength',   'Fool',       ], 'result': 'Justice'     },
     {'source': ['Strength',   'Magician',   ], 'result': 'Sun'         },
@@ -541,6 +553,7 @@ const arcana3Combos = [
     {'source': ['Strength',   'Justice',    ], 'result': 'Tower'       },
     {'source': ['Strength',   'Hermit',     ], 'result': 'Devil'       },
     {'source': ['Strength',   'Fortune',    ], 'result': 'Moon'        },
+    {'source': ['Strength',   'Strength',    ], 'result': 'Strength'        },
 
     {'source': ['Hanged Man', 'Fool',       ], 'result': 'Devil'       },
     {'source': ['Hanged Man', 'Magician',   ], 'result': 'Hermit'      },
@@ -554,6 +567,7 @@ const arcana3Combos = [
     {'source': ['Hanged Man', 'Hermit',     ], 'result': 'Fool'        },
     {'source': ['Hanged Man', 'Fortune',    ], 'result': 'Justice'     },
     {'source': ['Hanged Man', 'Strength',   ], 'result': 'Empress'     },
+    {'source': ['Hanged Man', 'Hanged Man',   ], 'result': 'Hanged Man'     },
 
     {'source': ['Death',      'Fool',       ], 'result': 'Temperance'  },
     {'source': ['Death',      'Magician',   ], 'result': 'Emperor'     },
@@ -568,6 +582,7 @@ const arcana3Combos = [
     {'source': ['Death',      'Fortune',    ], 'result': 'Fool'        },
     {'source': ['Death',      'Strength',   ], 'result': 'Lovers'      },
     {'source': ['Death',      'Hanged Man', ], 'result': 'Tower'       },
+    {'source': ['Death',      'Death', ], 'result': 'Death'       },
 
     {'source': ['Temperance', 'Fool',       ], 'result': 'Hanged Man'  },
     {'source': ['Temperance', 'Magician',   ], 'result': 'Tower'       },
@@ -583,6 +598,7 @@ const arcana3Combos = [
     {'source': ['Temperance', 'Strength',   ], 'result': 'Tower'       },
     {'source': ['Temperance', 'Hanged Man', ], 'result': 'Hierophant'  },
     {'source': ['Temperance', 'Death',      ], 'result': 'Moon'        },
+    {'source': ['Temperance', 'Temperance',      ], 'result': 'Temperance'        },
 
     {'source': ['Devil',      'Fool',       ], 'result': 'Moon'        },
     {'source': ['Devil',      'Magician',   ], 'result': 'Empress'     },
@@ -599,6 +615,7 @@ const arcana3Combos = [
     {'source': ['Devil',      'Hanged Man', ], 'result': 'Chariot'     },
     {'source': ['Devil',      'Death',      ], 'result': 'Strength'    },
     {'source': ['Devil',      'Temperance', ], 'result': 'Magician'    },
+    {'source': ['Devil',      'Devil', ], 'result': 'Devil'    },
 
     {'source': ['Tower',      'Fool',       ], 'result': 'Judgement'   },
     {'source': ['Tower',      'Magician',   ], 'result': 'Temperance'  },
@@ -616,6 +633,7 @@ const arcana3Combos = [
     {'source': ['Tower',      'Death',      ], 'result': 'Star'        },
     {'source': ['Tower',      'Temperance', ], 'result': 'Lovers'      },
     {'source': ['Tower',      'Devil',      ], 'result': 'Fool'        },
+    {'source': ['Tower',      'Tower',      ], 'result': 'Tower'        },
 
     {'source': ['Star',       'Fool',       ], 'result': 'Strength'    },
     {'source': ['Star',       'Magician',   ], 'result': 'Fool'        },
@@ -634,6 +652,7 @@ const arcana3Combos = [
     {'source': ['Star',       'Temperance', ], 'result': 'Chariot'     },
     {'source': ['Star',       'Devil',      ], 'result': 'Death'       },
     {'source': ['Star',       'Tower',      ], 'result': 'Priestess'   },
+    {'source': ['Star',       'Star',      ], 'result': 'Star'   },
 
     {'source': ['Moon',       'Fool',       ], 'result': 'Fortune'     },
     {'source': ['Moon',       'Magician',   ], 'result': 'Lovers'      },
@@ -653,6 +672,7 @@ const arcana3Combos = [
     {'source': ['Moon',       'Devil',      ], 'result': 'Hierophant'  },
     {'source': ['Moon',       'Tower',      ], 'result': 'Judgement'   },
     {'source': ['Moon',       'Star',       ], 'result': 'Magician'    },
+    {'source': ['Moon',       'Moon',       ], 'result': 'Moon'        },
 
     {'source': ['Sun',        'Fool',       ], 'result': 'Tower'       },
     {'source': ['Sun',        'Magician',   ], 'result': 'Death'       },
@@ -673,6 +693,7 @@ const arcana3Combos = [
     {'source': ['Sun',        'Tower',      ], 'result': 'Devil'       },
     {'source': ['Sun',        'Star',       ], 'result': 'Tower'       },
     {'source': ['Sun',        'Moon',       ], 'result': 'Judgement'   },
+    {'source': ['Sun',        'Sun',        ], 'result': 'Sun'         },
 
     {'source': ['Judgement',  'Fool',       ], 'result': 'Moon'        },
     {'source': ['Judgement',  'Magician',   ], 'result': 'Emperor'     },

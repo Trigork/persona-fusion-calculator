@@ -93,6 +93,8 @@ personaFusion
     return personae[i];
   }
 
+  console.log(this.fuse3("Fool", personaeByName["Shiki-Ouji"], personaeByName["Decarabia"], personaeByName["Slime"] ))
+
   this.getRecipes = function() {
     var recipes = [];
 
