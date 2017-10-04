@@ -258,10 +258,32 @@ ul.pagination li.active a{
   font-weight: bold;
 }
 
+#recipes td{
+  vertical-align: middle;
+}
+
+.recipe-persona a, .recipe-persona i{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.recipe-persona i{
+  margin-left: 10px;
+}
+
+.recipe-persona-name{
+  display: block;
+}
+
+.recipe-persona-info{
+  font-size: 10pt;
+}
+
 #footer{
   padding: 15px;
   font-size: 11pt;
   font-style: italic;
+  text-align: center;
 }
 
 #footer a{

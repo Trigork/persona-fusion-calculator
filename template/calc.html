@@ -30,9 +30,12 @@
           </thead>
           <tbody>
             <tr dir-paginate="recipe in recipes | filter: pCalc.filter | itemsPerPage:15">
-              <td>{{recipe.cost | number}} ¥</td>
-              <td ng-repeat="persona in recipe.sources">
-                <a href="#!/persona/{{persona.name}}">{{persona.name}}</a>
+              <td class='recipe-cost'>{{recipe.cost | number}} ¥</td>
+              <td class='recipe-persona' ng-repeat="persona in recipe.sources">
+                <a ng-show="persona.level > 0" href="#!/persona/{{persona.name}}">
+                  <span class="recipe-persona-name">{{persona.name}}</span>
+                  <span class="recipe-persona-info">{{persona.arcana}} ({{persona.level}})</span>
+                </a>
                 <i class="fa fa-key" ng-show="{{persona.item}}" title="This persona requires an item to summon" aria-hidden="true"></i>
                 <i class="fa fa-star" ng-show="{{persona.special}}" title="This persona requires a special fusion" aria-hidden="true"></i>
                 <i class="fa fa-arrow-circle-down" ng-show="{{persona.dlc}}" title="This persona is only available through DLC" aria-hidden="true"></i>
