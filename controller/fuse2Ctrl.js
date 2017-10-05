@@ -17,7 +17,7 @@ personaFusion
   };
 
   this.Fuse = function() {
-    $location.url('/fusion/normal/' + this.p1.name + '/' + this.p2.name);
+    this.Fuse2();
   }
 
   this.Fuse2 = function() {
@@ -77,7 +77,7 @@ personaFusion
            this.result.personae.push(personae[i]);
            var pushedi = i;
            while ( i >= 0 && (personae[i].item || personae[i].dlc)) i--;
-           
+
             if (i!= pushedi){
               this.result.personae.push(personae[i]);
             }
@@ -88,12 +88,6 @@ personaFusion
 	       return 0;
       }
     }
-  }
-
-  if(personaeByName[$routeParams.p1] && personaeByName[$routeParams.p2]){
-    this.p1 = personaeByName[$routeParams.p1];
-    this.p2 = personaeByName[$routeParams.p2];
-    this.Fuse2();
   }
 
   this.autoCompleteOptions = {

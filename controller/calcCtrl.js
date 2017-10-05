@@ -93,6 +93,8 @@ personaFusion
       }
     }
 
+    if (personae[i].special){i++;}
+
     return personae[i];
   }
 
@@ -146,7 +148,25 @@ personaFusion
           return arcanaRank[persona3.arcana] < arcanaRank[persona2.arcana];
         }
 
-        return true;
+        var forbiddenCombo = true;
+        forbiddenCombos.forEach(function(forbidden){
+            if(forbidden.sources.includes(persona1.name)
+            && forbidden.sources.includes(persona2.name)){
+              forbiddenCombo = false;
+            }
+
+            if(forbidden.sources.includes(persona1.name)
+            && forbidden.sources.includes(persona3.name)){
+              forbiddenCombo = false;
+            }
+
+            if(forbidden.sources.includes(persona2.name)
+             && forbidden.sources.includes(persona3.name)){
+              forbiddenCombo = false;
+            }
+        });
+
+        return forbiddenCombo;
       }
 
       function find3WayRecipes(arcana1, arcana2) {

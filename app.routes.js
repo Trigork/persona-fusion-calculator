@@ -29,25 +29,7 @@ personaFusion
       }
     )
     .when(
-        '/fusion/normal/:p1/:p2',
-        {
-        title: 'Normal Fusion',
-        templateUrl: 'template/normal.html',
-        controller: 'fuse2Ctrl',
-        controllerAs: 'f2'
-      }
-    )
-    .when(
         '/fusion/triangle',
-        {
-        title: 'Triangle Fusion',
-        templateUrl: 'template/triple.html',
-        controller: 'fuse3Ctrl',
-        controllerAs: 'f3'
-      }
-    )
-    .when(
-        '/fusion/triangle/:p1/:p2/:p3',
         {
         title: 'Triangle Fusion',
         templateUrl: 'template/triple.html',

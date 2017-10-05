@@ -1,8 +1,3 @@
-Functionality:
-  Fusion routes shouldn't be case sensitive:
-    a) Lowercase Database and present capitalized texts with filters
-    b) Index by capitalizing correctly
-
 Build and Automation:
   Make gulp script to create the distributable version:
     - Uglify of main app file causes it to break

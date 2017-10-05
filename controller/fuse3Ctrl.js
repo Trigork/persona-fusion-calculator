@@ -108,7 +108,7 @@ var arrayUnique = function(a) {
         if(personaeByName[p[0].name].arcana == personaeByName[p[1].name].arcana && personaeByName[p[1].name].arcana == personaeByName[p[2].name].arcana){
           level -= 5;
         }
-        console.log(level);
+
         var arcana = ddd[0].result;
         var personae = personaeByArcana[arcana];
 
@@ -121,6 +121,7 @@ var arrayUnique = function(a) {
             break;
           }
         }
+        
         if (!found) {
           this.result.error = "Invalid result";
           return 0;
@@ -142,10 +143,12 @@ var arrayUnique = function(a) {
           }
         }
 
-	if (i < 0) {
-	  this.result.error = personae[0].name + ' is the first Persona of the ' + arcana + ' Arcana';
-	  return 0;
-	}
+        if (personae[i].special){i++;}
+
+      	if (i < 0) {
+      	  this.result.error = personae[0].name + ' is the first Persona of the ' + arcana + ' Arcana';
+      	  return 0;
+      	}
 
         this.result.personae.push(personae[i]);
         //this.lalala = {"name": "(" + p[0].arcana + " x " + p[1].arcana + " = " + bbb[0].result + ") x " + p[2].arcana + " = " + arcana, "level": "-", "arcana": "-"};
